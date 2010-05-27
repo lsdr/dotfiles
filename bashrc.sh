@@ -49,8 +49,9 @@ alias ls='ls -G'
 alias ll='ls -lh'
 alias la='ls -la'
 alias c='clear'
-alias top='top -o cpu'
 alias lsof='lsof -i -Pn'
+alias bset='rvm gemset use busk'
+alias lset='rvm gemset use labs'
 
 alias pendrive='cd /Volumes/PENDRIVEL'
 
