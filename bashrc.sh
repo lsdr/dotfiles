@@ -32,14 +32,12 @@ function _basedir {
 }
 
 function _git_current_branch {
-  git symbolic-ref HEAD 2>/dev/null | sed 's/refs\/heads\///' | awk '{print "(" $1 ")"}'
+  git symbolic-ref HEAD 2>/dev/null | sed 's/refs\/heads\///' | awk '{print "(" $1 ") "}'
 }
 
 function _git_prompt {
   local git_dir="$(git rev-parse --git-dir 2>/dev/null)"
-  if [ -n "$git_dir" ]; then
-    printf " \033[1;36m$1\033[0m" `_git_current_branch`
-  fi
+  if [ -n "$git_dir" ]; then _git_current_branch; fi
 }
 
 function _rvm_prompt {
@@ -85,7 +83,7 @@ if [ -s ~/.rvm/scripts/rvm ]; then source ~/.rvm/scripts/rvm; fi
 #   40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
 #   \[\e[01;36m\]
 #
-PS1='[$(_rvm_prompt)] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\]$(_git_prompt "%s") \[\033[1;34m\]\$\[\033[0m\] '
+PS1='[$(_rvm_prompt)] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\] \[\033[1;36m\]$(_git_prompt "%s")\[\033[0m\]\[\033[1;34m\]\$\[\033[0m\] '
 
 # references:
 # http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
