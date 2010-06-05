@@ -26,6 +26,7 @@ export RUBYOPT=rubygems
 #export SKIP_MEMCACHED=true
 #export EVENT_NOKQUEUE=1
 
+# "private" helper functions
 function _basedir {
   basename `pwd`
 }
@@ -45,13 +46,18 @@ function _rvm_prompt {
   ~/.rvm/bin/rvm-prompt | sed 's/ruby//' | sed 's/p[0-9][0-9][0-9]//' | sed 's/\-//g' | awk '{print $1}' 
 }
 
+# "public" helper functions
+function gemdir {
+  gem env | grep -i install | awk '{print $4}'
+}
+
 alias ls='ls -G'
 alias ll='ls -lh'
 alias la='ls -la'
 alias c='clear'
 alias lsof='lsof -i -Pn'
-alias bset='rvm gemset use busk'
-alias lset='rvm gemset use labs'
+alias bset='cd Code/busk; rvm gemset use busk'
+alias lset='cd Code/labs; rvm gemset use labs'
 
 alias pendrive='cd /Volumes/PENDRIVEL'
 
