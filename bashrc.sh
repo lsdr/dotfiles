@@ -49,10 +49,13 @@ function gemdir {
   gem env | grep -i install | awk '{print $4}'
 }
 
+alias c='clear'
+alias s='script/server'
 alias ls='ls -G'
 alias ll='ls -lh'
 alias la='ls -la'
-alias c='clear'
+alias pse='ps -ef | grep -i'
+alias awk='gawk'
 alias lsof='lsof -i -Pn'
 alias bset='cd Code/busk; rvm gemset use busk'
 alias lset='cd Code/labs; rvm gemset use labs'
