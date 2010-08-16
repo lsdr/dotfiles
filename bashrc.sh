@@ -3,9 +3,8 @@
 # PATH setup
 PATH="$PATH:/usr/local/sbin"
 PATH="$PATH:/Users/lsdr/Scripts"
-PATH="$PATH:/usr/local/mysql/bin"
 PATH="$PATH:/opt/mongodb/current/bin"
-#PATH="$PATH:/Applications/ejabberd/2.1.1/bin"
+PATH="$PATH:/Applications/ejabberd/2.1.4/bin"
 
 MANPATH="$MANPATH:/usr/local/man"
 export PATH MANPATH
