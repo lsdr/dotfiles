@@ -40,7 +40,7 @@ function _git_prompt {
 }
 
 function _rvm_prompt {
-  ~/.rvm/bin/rvm-prompt | sed 's/ruby//' | sed 's/p[0-9][0-9][0-9]//' | sed 's/\-//g' | awk '{print $1}' 
+  ~/.rvm/bin/rvm-prompt | sed 's/\-/ /g' | awk '{ if ($1 == "ruby") {print $2} else {print $2 " (" $1 ")"} }'
 }
 
 # "public" helper functions
