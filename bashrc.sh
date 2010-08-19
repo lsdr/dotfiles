@@ -40,7 +40,7 @@ function _git_prompt {
 }
 
 function _rvm_prompt {
-  ~/.rvm/bin/rvm-prompt | sed 's/\-/ /g' | awk '{ if ($1 == "ruby") {print $2} else {print $2 " (" $1 ")"} }'
+  ~/.rvm/bin/rvm-prompt | sed 's/\-/ /' | sed 's/\@/ /' | awk '{ sub(/\-[a-zA-Z0-9.-]+/, "", $2); print $2, $3"|"$1 }'
 }
 
 # "public" helper functions
@@ -56,8 +56,8 @@ alias la='ls -la'
 alias pse='ps -ef | grep -i'
 alias awk='gawk'
 alias lsof='lsof -i -Pn'
-alias bset='cd Code/busk; rvm gemset use busk'
-alias lset='cd Code/labs; rvm gemset use labs'
+alias busk='cd ~/Code/busk'
+alias labs='cd ~/Code/labs'
 
 alias pendrive='cd /Volumes/PENDRIVEL'
 
