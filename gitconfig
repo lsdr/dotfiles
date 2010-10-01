@@ -1,0 +1,28 @@
+[color]
+  branch = auto
+  status = auto
+  diff = auto
+  pager = true
+[core]
+  excludesfile = ~/.gitignore
+[push]
+  default = current
+[alias]
+  ci = commit
+  co = checkout
+  b = branch -a
+  st = status
+  w = whatchanged
+  sth = stash
+  los = log --stat
+  lop = log -p
+  llog = log --pretty='format:%Cgreen%H %Cred%ai %Creset- %s'
+  slog = shortlog -n
+  stats = shortlog -s -n
+  df = diff -u
+  tags = tag -l -n30
+  last = cat-file commit HEAD
+[log]
+  date = rfc
+[url "git@github.com:lsdr/"]
+  insteadOf = github:
