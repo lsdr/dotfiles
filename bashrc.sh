@@ -56,7 +56,6 @@ alias la='ls -la'
 alias pse='ps -ef | grep -i'
 alias awk='gawk'
 alias lsof='lsof -i -Pn'
-alias busk='cd ~/Code/busk'
 alias labs='cd ~/Code/labs'
 
 alias pendrive='cd /Volumes/PENDRIVEL'
