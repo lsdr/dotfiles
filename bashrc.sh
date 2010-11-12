@@ -25,7 +25,7 @@ export RUBYOPT=rubygems
 #export SKIP_MEMCACHED=true
 #export EVENT_NOKQUEUE=1
 
-export DYLD_LIBRARY_PATH=/usr/local/lib/oracle/instantclient_10_2
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/lib/oracle/instantclient_10_2
 
 # "private" helper functions
 function _basedir {
