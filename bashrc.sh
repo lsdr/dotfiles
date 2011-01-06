@@ -11,7 +11,12 @@ export PATH MANPATH
 
 export EDITOR=vim
 export VIM_APP_DIR=~/Code
-export JAVA_HOME=/Library/Java/Home
+# export JAVA_HOME=/Library/Java/Home
+export JAVA_HOME=`/usr/libexec/java_home`
+
+# ant settings
+export ANT_HOME=/usr/share/ant
+export ANT_OPTS="-Xms512m -Xmx512m"
 
 # set x86_64 flags
 export CFLAGS="-arch x86_64 -O2"
@@ -88,7 +93,7 @@ if [ -s ~/.rvm/scripts/rvm ]; then source ~/.rvm/scripts/rvm; fi
 #   40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
 #   \[\e[01;36m\]
 #
-PS1='[$(_rvm_prompt)] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\] \[\033[1;36m\]$(_git_prompt "%s")\[\033[0m\]\[\033[1;34m\]\$\[\033[0m\] '
+PS1='[$(_rvm_prompt)] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\] \[\033[1;36m\]$(_git_prompt "%s")\[\033[0m\]\n\[\033[1;34m\]\$\[\033[0m\] '
 
 # references:
 # http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
