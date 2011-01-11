@@ -87,10 +87,10 @@ fi
 # bootstrap rvm if avaliable
 if [ -s ~/.rvm/scripts/rvm ]; then source ~/.rvm/scripts/rvm; fi
 
-PS1='[$(_rvm_prompt)] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\] \[\033[1;36m\]$(_git_prompt "%s")\[\033[0m\]\n\[\033[1;34m\]\$\[\033[0m\] '
 # setting the bash PS1 prompt to my liking
 # example: export PS1="\u@\h: \W \$ "
 if [ -s ~/.bash_colors ]; then source ~/.bash_colors; fi
+PS1='[$(_rvm_prompt)] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\] \[\033[1;36m\]$(_git_prompt "%s")\[\033[0m\]\n\[\033[1;34m\]\$\[\033[0m\] '
 
 # references:
 # http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
