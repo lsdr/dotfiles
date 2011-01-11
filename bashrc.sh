@@ -3,15 +3,12 @@
 # PATH setup
 PATH="$PATH:/usr/local/sbin"
 PATH="$PATH:/Users/lsdr/Scripts"
-PATH="$PATH:/opt/mongodb/current/bin"
-PATH="$PATH:/Applications/ejabberd/2.1.4/bin"
 
 MANPATH="$MANPATH:/usr/local/man"
 export PATH MANPATH
 
 export EDITOR=vim
 export VIM_APP_DIR=~/Code
-# export JAVA_HOME=/Library/Java/Home
 export JAVA_HOME=`/usr/libexec/java_home`
 
 # ant settings
