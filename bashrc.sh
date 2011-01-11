@@ -47,12 +47,15 @@ function _git_prompt {
 }
 
 function _rvm_prompt {
-  ~/.rvm/bin/rvm-prompt | sed 's/\-/ /' | sed 's/\@/ /' | awk '{ sub(/\-[a-zA-Z0-9.-]+/, "", $2); print $2, $3"|"$1 }'
-}
-
-# "public" helper functions
-function gemdir {
-  gem env | grep -i install | awk '{print $4}'
+  $rvm_path/bin/rvm-prompt i v g |
+  sed 's/\-/ /' |
+  sed 's/\@/ /' |
+  awk '{ sub(/\-[a-zA-Z0-9.-]+/, "", $2); print $2, $3"|"$1 }'
+  # local INTERPRETER=`$rvm_path/bin/rvm-prompt i`
+  # local VERSION=`$rvm_path/bin/rvm-prompt v`
+  # local GEMSET=`$rvm_path/bin/rvm-prompt g`
+  # 
+  # echo "${WHITE}${VERSION} ${GEMSET}|${INTERPRETER}${NO_CLR}"
 }
 
 alias c='clear'
@@ -81,19 +84,13 @@ if [ -f $BASH_COMPLETION ]; then
   source $BASH_COMPLETION || echo 'bash completions unavaliable.'
 fi
 
+# bootstrap rvm if avaliable
 if [ -s ~/.rvm/scripts/rvm ]; then source ~/.rvm/scripts/rvm; fi
 
-# export PS1="\u@\h: \W \$ "
-#
-# Attribute codes:
-#   00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
-# Text color codes:
-#   30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
-# Background color codes:
-#   40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
-#   \[\e[01;36m\]
-#
 PS1='[$(_rvm_prompt)] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\] \[\033[1;36m\]$(_git_prompt "%s")\[\033[0m\]\n\[\033[1;34m\]\$\[\033[0m\] '
+# setting the bash PS1 prompt to my liking
+# example: export PS1="\u@\h: \W \$ "
+if [ -s ~/.bash_colors ]; then source ~/.bash_colors; fi
 
 # references:
 # http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html

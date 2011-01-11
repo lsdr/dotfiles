@@ -1,6 +1,7 @@
 #!/bin/sh
 
 cp bash_profile.sh ~/.bash_profile
+cp bash_colors.sh ~/.bash_colors
 cp bashrc.sh ~/.bashrc
 
 cp irbrc ~/.irbrc
