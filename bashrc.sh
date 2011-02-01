@@ -3,6 +3,7 @@
 # PATH setup
 PATH="$PATH:/usr/local/sbin"
 PATH="$PATH:/Users/lsdr/Scripts"
+PATH="$PATH:/usr/local/share/npm/bin"
 
 MANPATH="$MANPATH:/usr/local/man"
 export PATH MANPATH
@@ -14,6 +15,9 @@ export JAVA_HOME=`/usr/libexec/java_home`
 # ant settings
 export ANT_HOME=/usr/share/ant
 export ANT_OPTS="-Xms512m -Xmx512m"
+
+# node settings
+export NODE_PATH=/usr/local/lib/node
 
 # set x86_64 flags
 export CFLAGS="-arch x86_64 -O2"
@@ -74,6 +78,8 @@ alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g --servername `_basedi
 alias pyenv='virtualenv --python=/usr/local/bin/python --clear --no-site-packages'
 
 shopt -s checkwinsize
+shopt -s cdspell
+shopt -s mailwarn
 unset MAILCHECK
 
 BASH_COMPLETION='/usr/local/etc/bash_completion'
