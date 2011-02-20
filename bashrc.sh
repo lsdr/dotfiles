@@ -31,6 +31,11 @@ export RUBYOPT=rubygems
 #export SKIP_MEMCACHED=true
 #export EVENT_NOKQUEUE=1
 
+# pip now requires a virtualenv to run
+export PIP_REQUIRE_VIRTUALENV=true
+# pip respects the current virtualenv in use
+export PIP_RESPECT_VIRTUALENV=true
+
 export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/lib/oracle/instantclient_10_2
 
 # "private" helper functions
