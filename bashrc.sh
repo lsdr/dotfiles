@@ -36,6 +36,12 @@ export PIP_REQUIRE_VIRTUALENV=true
 # pip respects the current virtualenv in use
 export PIP_RESPECT_VIRTUALENV=true
 
+# amazon web services
+export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
+export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
+export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
+
+# oracle support
 export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/lib/oracle/instantclient_10_2
 
 # "private" helper functions
