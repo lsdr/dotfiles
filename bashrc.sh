@@ -1,5 +1,8 @@
 # vim: ft=sh:
 
+# iTerm2 needs this to show utf-8 correctly
+export LC_ALL="en_US.UTF-8"
+
 # PATH setup
 PATH="$PATH:/usr/local/sbin"
 PATH="$PATH:/Users/lsdr/Scripts"
@@ -8,11 +11,12 @@ PATH="$PATH:/usr/local/share/npm/bin"
 MANPATH="$MANPATH:/usr/local/man"
 export PATH MANPATH
 
+# general settings
 export EDITOR=vim
 export VIM_APP_DIR=~/Code
-export JAVA_HOME=`/usr/libexec/java_home`
 
-# ant settings
+# java-related settings
+export JAVA_HOME=`/usr/libexec/java_home`
 export ANT_HOME=/usr/share/ant
 export ANT_OPTS="-Xms512m -Xmx512m"
 
@@ -71,14 +75,12 @@ function _rvm_prompt {
 }
 
 alias c='clear'
-alias s='script/server'
 alias ls='ls -G'
 alias ll='ls -lh'
 alias la='ls -la'
 alias pse='ps -ef | grep -i'
 alias awk='gawk'
 alias lsof='lsof -i -Pn'
-alias labs='cd ~/Code/labs'
 
 alias pendrive='cd /Volumes/PENDRIVEL'
 

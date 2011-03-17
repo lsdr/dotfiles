@@ -5,3 +5,6 @@ cp bash_colors.sh ~/.bash_colors
 cp bashrc.sh ~/.bashrc
 
 cp irbrc ~/.irbrc
+cp caprc ~/.caprc
+cp gemrc ~/.gemrc
+cp rvmrc ~/.rvmrc
