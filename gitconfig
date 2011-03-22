@@ -1,3 +1,5 @@
+[user]
+  name = Luiz Rocha
 [color]
   branch = auto
   status = auto
@@ -16,13 +18,16 @@
   sth = stash
   los = log --stat
   lop = log -p
-  llog = log --pretty='format:%Cgreen%H %Cred%ai %Creset- %s'
+  llog = log --pretty='format:%Cgreen%h %Cred%ar %Creset-- %s (%an)' --max-count=20
   slog = shortlog -n
-  stats = shortlog -s -n
-  df = diff -u
+  stats = shortlog -s -n --no-merges
   tags = tag -l -n30
   last = cat-file commit HEAD
+  count = !git log --author='Luiz Rocha' --oneline --no-merges | wc -l | awk '{print $1}'
+  standup = shortlog --since=yesterday
+  uncommit = reset --soft HEAD^
 [log]
   date = rfc
 [url "git@github.com:lsdr/"]
   insteadOf = github:
+
