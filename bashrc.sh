@@ -21,7 +21,7 @@ export ANT_HOME=/usr/share/ant
 export ANT_OPTS="-Xms512m -Xmx512m"
 
 # node settings
-export NODE_PATH=/usr/local/lib/node
+# export NODE_PATH=/usr/local/lib/node
 
 # set x86_64 flags
 export CFLAGS="-arch x86_64 -O2"
@@ -102,6 +102,9 @@ fi
 
 # bootstrap rvm if avaliable
 if [ -s ~/.rvm/scripts/rvm ]; then source ~/.rvm/scripts/rvm; fi
+
+# bootstrap nvm (node.js version manager) if avaliable
+if [ -s ~/.nvm/nvm.sh ]; then source ~/.nvm/nvm.sh; fi
 
 # setting the bash PS1 prompt to my liking
 # example: export PS1="\u@\h: \W \$ "
