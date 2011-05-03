@@ -45,6 +45,9 @@ export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
 export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
 export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
 
+# git prompt pimpin'
+export GIT_PS1_SHOWDIRTYSTATE=true
+
 # oracle support
 export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/lib/oracle/instantclient_10_2
 
@@ -53,14 +56,14 @@ function _basedir {
   basename `pwd`
 }
 
-function _git_current_branch {
-  git symbolic-ref HEAD 2>/dev/null | sed 's/refs\/heads\///' | awk '{print "(" $1 ") "}'
-}
+# function _git_current_branch {
+#   git symbolic-ref HEAD 2>/dev/null | sed 's/refs\/heads\///' | awk '{print "(" $1 ") "}'
+# }
 
-function _git_prompt {
-  local git_dir="$(git rev-parse --git-dir 2>/dev/null)"
-  if [ -n "$git_dir" ]; then _git_current_branch; fi
-}
+# function _git_prompt {
+#   local git_dir="$(git rev-parse --git-dir 2>/dev/null)"
+#   if [ -n "$git_dir" ]; then _git_current_branch; fi
+# }
 
 function _rvm_prompt {
   $rvm_path/bin/rvm-prompt i v g |
@@ -109,7 +112,7 @@ if [ -s ~/.nvm/nvm.sh ]; then source ~/.nvm/nvm.sh; fi
 # setting the bash PS1 prompt to my liking
 # example: export PS1="\u@\h: \W \$ "
 if [ -s ~/.bash_colors ]; then source ~/.bash_colors; fi
-PS1='[$(_rvm_prompt)] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\] \[\033[1;36m\]$(_git_prompt "%s")\[\033[0m\]\n\[\033[1;34m\]\$\[\033[0m\] '
+PS1='[$(_rvm_prompt)] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\]\[\033[1;36m\]$(__git_ps1)\[\033[0m\]\n\[\033[1;34m\]\$\[\033[0m\] '
 
 # references:
 # http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
