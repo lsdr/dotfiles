@@ -6,7 +6,6 @@ export LC_ALL="en_US.UTF-8"
 # PATH setup
 PATH="$PATH:/usr/local/sbin"
 PATH="$PATH:/Users/lsdr/Scripts"
-PATH="$PATH:/usr/local/share/npm/bin"
 
 MANPATH="$MANPATH:/usr/local/man"
 export PATH MANPATH
