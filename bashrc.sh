@@ -29,7 +29,6 @@ export ARCHFLAGS="-arch x86_64"
 export CLICOLOR=1
 export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
-export GREP_OPTIONS="--color=auto"
 export RUBYOPT=rubygems
 #export SKIP_MEMCACHED=true
 #export EVENT_NOKQUEUE=1
@@ -48,7 +47,9 @@ export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
 export GIT_PS1_SHOWDIRTYSTATE=true
 
 # oracle support
-export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/lib/oracle/instantclient_10_2
+if [ -f '/usr/local/lib/oracle/instantclient_10_2' ]; then
+  export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/lib/oracle/instantclient_10_2
+fi
 
 # "private" helper functions
 function _basedir {
@@ -97,6 +98,7 @@ shopt -s cdspell
 shopt -s mailwarn
 unset MAILCHECK
 
+# setup bash completion
 BASH_COMPLETION='/usr/local/etc/bash_completion'
 if [ -f $BASH_COMPLETION ]; then
   source $BASH_COMPLETION || echo 'bash completions unavaliable.'
