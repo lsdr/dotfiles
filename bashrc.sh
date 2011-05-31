@@ -56,25 +56,8 @@ function _basedir {
   basename `pwd`
 }
 
-# function _git_current_branch {
-#   git symbolic-ref HEAD 2>/dev/null | sed 's/refs\/heads\///' | awk '{print "(" $1 ") "}'
-# }
-
-# function _git_prompt {
-#   local git_dir="$(git rev-parse --git-dir 2>/dev/null)"
-#   if [ -n "$git_dir" ]; then _git_current_branch; fi
-# }
-
 function _rvm_prompt {
-  $rvm_path/bin/rvm-prompt i v g |
-  sed 's/\-/ /' |
-  sed 's/\@/ /' |
-  awk '{ sub(/\-[a-zA-Z0-9.-]+/, "", $2); print $2, $3"|"$1 }'
-  # local INTERPRETER=`$rvm_path/bin/rvm-prompt i`
-  # local VERSION=`$rvm_path/bin/rvm-prompt v`
-  # local GEMSET=`$rvm_path/bin/rvm-prompt g`
-  # 
-  # echo "${WHITE}${VERSION} ${GEMSET}|${INTERPRETER}${NO_CLR}"
+  $rvm_path/bin/rvm-prompt v
 }
 
 alias c='clear'
