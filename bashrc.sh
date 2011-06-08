@@ -4,8 +4,9 @@
 export LC_ALL="en_US.UTF-8"
 
 # PATH setup
-PATH="$PATH:/usr/local/sbin"
+PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 PATH="$PATH:/Users/lsdr/Scripts"
+PATH="$PATH:/Users/lsdr/.cabal/bin"
 
 MANPATH="$MANPATH:/usr/local/man"
 export PATH MANPATH
