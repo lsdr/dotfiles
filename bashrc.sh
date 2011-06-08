@@ -95,7 +95,7 @@ if [ -s ~/.nvm/nvm.sh ]; then source ~/.nvm/nvm.sh; fi
 
 # setting the bash PS1 prompt to my liking
 # example: export PS1="\u@\h: \W \$ "
-if [ -s ~/.bash_colors ]; then source ~/.bash_colors; fi
+# if [ -s ~/.bash_colors ]; then source ~/.bash_colors; fi
 PS1='[$(_rvm_prompt)] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\]\[\033[1;36m\]$(__git_ps1)\[\033[0m\]\n\[\033[1;34m\]\$\[\033[0m\] '
 
 # references:
