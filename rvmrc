@@ -1,4 +1,3 @@
 rvm_archflags="-arch x86_64"
-rvm_project_rvmrc=0
 rvm_pretty_print_flag=1
 rvm_path="/Users/lsdr/.rvm"
