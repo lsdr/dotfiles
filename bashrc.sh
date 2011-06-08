@@ -7,6 +7,7 @@ export LC_ALL="en_US.UTF-8"
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 PATH="$PATH:/Users/lsdr/Scripts"
 PATH="$PATH:/Users/lsdr/.cabal/bin"
+export PATH
 
 MANPATH="$MANPATH:/usr/local/man"
 export PATH MANPATH
@@ -79,7 +80,7 @@ alias pyenv='virtualenv --python=/usr/local/bin/python --clear --no-site-package
 
 shopt -s checkwinsize
 shopt -s cdspell
-shopt -s mailwarn
+shopt -u mailwarn
 unset MAILCHECK
 
 # setup bash completion
