@@ -47,8 +47,8 @@ export PIP_RESPECT_VIRTUALENV=true
 # git prompt pimpin'
 export GIT_PS1_SHOWDIRTYSTATE=true
 
-# oracle support
-if [ -f '/usr/local/lib/oracle/instantclient_10_2' ]; then
+# oracle instant client support
+if [ -d /usr/local/lib/oracle/instantclient_10_2 ]; then
   export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/lib/oracle/instantclient_10_2
 fi
 
@@ -83,9 +83,8 @@ shopt -s mailwarn
 unset MAILCHECK
 
 # setup bash completion
-BASH_COMPLETION='/usr/local/etc/bash_completion'
-if [ -f $BASH_COMPLETION ]; then
-  source $BASH_COMPLETION || echo 'bash completions unavaliable.'
+if [ -s /usr/local/etc/bash_completion ]; then
+  source /usr/local/etc/bash_completion || echo 'bash completions unavaliable.'
 fi
 
 # bootstrap rvm if avaliable
