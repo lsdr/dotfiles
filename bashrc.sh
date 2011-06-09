@@ -80,7 +80,6 @@ alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g --servername `_basedi
 
 alias pyenv='virtualenv --python=/usr/local/bin/python --clear --no-site-packages'
 
-shopt -s autocd
 shopt -s checkwinsize
 shopt -s cdspell
 shopt -u mailwarn
