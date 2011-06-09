@@ -6,7 +6,9 @@ export LC_ALL="en_US.UTF-8"
 # PATH setup
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 PATH="$PATH:/Users/lsdr/Scripts"
-PATH="$PATH:/Users/lsdr/.cabal/bin"
+if [ -d /Users/lsdr/.cabal/bin ]; then
+  PATH="$PATH:/Users/lsdr/.cabal/bin"
+fi
 export PATH
 
 MANPATH="$MANPATH:/usr/local/man"
