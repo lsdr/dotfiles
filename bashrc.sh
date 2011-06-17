@@ -3,8 +3,7 @@
 # iTerm2 needs this to show utf-8 correctly
 export LC_ALL="en_US.UTF-8"
 
-# PATH setup
-PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+# PATH setup bonanza
 PATH="$PATH:/Users/lsdr/Scripts"
 
 if [ -d /Users/lsdr/.cabal/bin ]; then
@@ -12,9 +11,10 @@ if [ -d /Users/lsdr/.cabal/bin ]; then
 fi
 
 if [ -d /usr/local/share/python ]; then
-  PATH="$PATH:/usr/local/share/python"
+  PATH="/usr/local/share/python:$PATH"
 fi
 
+PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 MANPATH="$MANPATH:/usr/local/man"
 export PATH MANPATH
 
