@@ -6,10 +6,14 @@ export LC_ALL="en_US.UTF-8"
 # PATH setup
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 PATH="$PATH:/Users/lsdr/Scripts"
+
 if [ -d /Users/lsdr/.cabal/bin ]; then
   PATH="$PATH:/Users/lsdr/.cabal/bin"
 fi
-export PATH
+
+if [ -d /usr/local/share/python ]; then
+  PATH="$PATH:/usr/local/share/python"
+fi
 
 MANPATH="$MANPATH:/usr/local/man"
 export PATH MANPATH
