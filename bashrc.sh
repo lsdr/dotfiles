@@ -82,7 +82,7 @@ alias vim='/Applications/MacVim.app/Contents/MacOS/Vim '
 alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim --remote-tab'
 alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g --servername `_basedir`'
 
-alias pyenv='virtualenv --python=/usr/local/bin/python --clear --no-site-packages'
+alias pyenv='virtualenv --python=/usr/local/bin/python --clear --no-site-packages --distribute'
 
 shopt -s checkwinsize
 shopt -s cdspell
