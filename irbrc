@@ -1,7 +1,7 @@
 # load a bunch of useful libs
 [
   'irb/completion',
-  'looksee'
+  'looksee',
   'ap'
 ].each do |_gem|
   begin
