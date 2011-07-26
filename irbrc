@@ -1,20 +1,21 @@
+# load a bunch of useful libs
+[
+  'irb/completion',
+  'looksee'
+  'ap'
+].each do |_gem|
+  begin
+    require _gem
+  rescue LoadError => e
+    puts e.message
+  end
+end
 
 begin
-  gems = [
-    'irb/completion',
-    'ap']
-           
-  gems.each do |_gem|
-    begin
-      require _gem
-    rescue LoadError
-    end
-  end
-  
-  IRB.conf[:USE_READLINE] = true
+  # IRB.conf[:USE_READLINE] = true
   IRB.conf[:AUTO_INDENT]  = true
   
-  # prompt pimp, by fnando (github.com/fnando/dotfiles)
+  # prompt pimp; stolen from fnando (github.com/fnando/dotfiles)
   prompt = "\033[1;30m#{RUBY_VERSION}\033[0m"
 
   IRB.conf[:PROMPT][:CUSTOM] = {
@@ -25,7 +26,20 @@ begin
     :PROMPT_S => nil }
     
   IRB.conf[:PROMPT_MODE] = :CUSTOM
-  
 rescue Exception => e
   puts e.message
+end
+
+# helper methods
+# local_methods; stolen from lucashungaro (github.com/lucashungaro/dotfiles)
+class Object
+  def local_methods
+    (methods - Object.instance_methods).sort
+  end
+end
+
+# railties
+if defined?(Rails) && !Object.const_defined?("RAILS_DEFAULT_LOGGER")
+  require "logger"
+  RAILS_DEFAULT_LOGGER = Logger.new(STDOUT)
 end
