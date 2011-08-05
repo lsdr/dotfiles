@@ -78,10 +78,11 @@ alias lsof='lsof -i -Pn'
 
 alias pendrive='cd /Volumes/PENDRIVEL'
 
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim '
-alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim --remote-tab'
-alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g --servername `_basedir`'
+# installing vim via homebrew:
+# brew install macvim --override-system-vim --enable-clipboard
+alias gvim='vim -g --servername `_basedir`'
 
+# python virtualenv shortcuts
 alias pyenv='virtualenv --python=/usr/local/bin/python --clear --no-site-packages --distribute'
 
 shopt -s checkwinsize
