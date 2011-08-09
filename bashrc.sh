@@ -84,6 +84,7 @@ alias gvim='vim -g --servername `_basedir`'
 
 # python virtualenv shortcuts
 alias pyenv='virtualenv --python=/usr/local/bin/python --clear --no-site-packages --distribute'
+alias pyenv3='virtualenv --python=/usr/local/bin/python3 --clear --no-site-packages --distribute'
 
 shopt -s checkwinsize
 shopt -s cdspell
