@@ -27,6 +27,9 @@ export JAVA_HOME=`/usr/libexec/java_home`
 export ANT_HOME=/usr/share/ant
 export ANT_OPTS="-Xms512m -Xmx512m"
 
+# scala-related settings
+export SCALA_HOME=/usr/local/Cellar/scala/2.9.1/libexec
+
 # node settings
 # export NODE_PATH=/usr/local/lib/node
 
