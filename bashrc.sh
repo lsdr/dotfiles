@@ -31,7 +31,9 @@ export ANT_OPTS="-Xms512m -Xmx512m"
 export SCALA_HOME=/usr/local/Cellar/scala/2.9.1/libexec
 
 # node settings
-# export NODE_PATH=/usr/local/lib/node
+if [ -d /usr/local/lib/node_modules ]; then
+  export NODE_PATH=/usr/local/lib/node_modules
+fi
 
 # set x86_64 flags
 export CFLAGS="-arch x86_64 -O2"
@@ -52,7 +54,7 @@ export PIP_RESPECT_VIRTUALENV=true
 # amazon web services
 # export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
 # export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
-# export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.4.2.2/jars"
+# export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.4.4.1/jars"
 
 # git prompt pimpin'
 export GIT_PS1_SHOWDIRTYSTATE=true
