@@ -52,9 +52,9 @@ export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
 
 # amazon web services
-# export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
-# export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
-# export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.4.4.1/jars"
+export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
+export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
+export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.5.0.1/jars"
 
 # git prompt pimpin'
 export GIT_PS1_SHOWDIRTYSTATE=true
