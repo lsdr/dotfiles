@@ -30,7 +30,7 @@ export ANT_OPTS="-Xms512m -Xmx512m"
 # scala-related settings
 if [ -d /usr/local/Cellar/scala/2.9.1/libexec ]; then
   export SCALA_HOME=/usr/local/Cellar/scala/2.9.1/libexec
-if
+fi
 
 # node settings
 if [ -d /usr/local/lib/node_modules ]; then
@@ -62,7 +62,7 @@ export PIP_RESPECT_VIRTUALENV=true
 export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
 export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
 export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.5.0.1/jars"
-export EC2_URL=https://ec2.sa-east-1.amazonaws.com
+export EC2_URL='https://ec2.sa-east-1.amazonaws.com'
 
 # git prompt pimpin'
 export GIT_PS1_SHOWDIRTYSTATE=true
