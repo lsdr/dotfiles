@@ -88,6 +88,7 @@ alias la='ls -la'
 alias pse='ps -ef | grep -i'
 alias awk='gawk'
 alias lsof='lsof -i -Pn'
+alias bexec='bundle exec'
 
 alias pendrive='cd /Volumes/PENDRIVEL'
 
