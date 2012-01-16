@@ -113,6 +113,9 @@ fi
 # bootstrap rvm if avaliable
 if [ -s ~/.rvm/scripts/rvm ]; then source ~/.rvm/scripts/rvm; fi
 
+# bootstrap core virtualenv if avaliable
+if [ -s ~/.pvm/core ]; then source ~/.pvm/core/bin/activate; fi
+
 # bootstrap nvm (node.js version manager) if avaliable
 if [ -s ~/.nvm/nvm.sh ]; then source ~/.nvm/nvm.sh; fi
 
