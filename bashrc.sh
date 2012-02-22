@@ -102,6 +102,9 @@ alias pyenv3='virtualenv --python=/usr/local/bin/python3 --clear --no-site-packa
 
 shopt -s checkwinsize
 shopt -s cdspell
+shopt -s globstar
+shopt -s autocd
+
 shopt -u mailwarn
 unset MAILCHECK
 
