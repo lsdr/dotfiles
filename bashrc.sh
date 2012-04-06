@@ -28,8 +28,8 @@ export ANT_HOME=/usr/share/ant
 export ANT_OPTS="-Xms512m -Xmx512m"
 
 # scala-related settings
-if [ -d /usr/local/Cellar/scala/2.9.1/libexec ]; then
-  export SCALA_HOME=/usr/local/Cellar/scala/2.9.1/libexec
+if [ -d /usr/local/Cellar/scala/2.9.1-1/libexec ]; then
+  export SCALA_HOME=/usr/local/Cellar/scala/2.9.1-1/libexec
 fi
 
 # node settings
