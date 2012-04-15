@@ -57,6 +57,8 @@ export RUBYOPT=rubygems
 export PIP_REQUIRE_VIRTUALENV=true
 # pip respects the current virtualenv in use
 export PIP_RESPECT_VIRTUALENV=true
+# virtualenv uses distribute by default
+export VIRTUALENV_DISTRIBUTE=true
 
 # amazon web services
 export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
