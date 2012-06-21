@@ -18,6 +18,14 @@ PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 MANPATH="$MANPATH:/usr/local/man"
 export PATH MANPATH
 
+# CDPATH for fun and profit
+CDPATH="~:~/Code"
+
+if [ -d /Users/lsdr/Projects ]; then
+  CDPATH="$CDPATH:/Users/lsdr/Projects"
+fi
+export CDPATH
+
 # general settings
 export EDITOR=vim
 export VIM_APP_DIR=~/Code
