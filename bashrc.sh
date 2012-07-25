@@ -26,9 +26,10 @@ if [ -d /Users/lsdr/Projects ]; then
 fi
 export CDPATH
 
-# general settings
+# editor settings
 export EDITOR=vim
 export VIM_APP_DIR=~/Code
+alias gvim='vim -g --servername `_basedir`'
 
 # java-related settings
 export JAVA_HOME=`/usr/libexec/java_home`
@@ -91,25 +92,7 @@ function _rvm_prompt {
   $rvm_path/bin/rvm-prompt v
 }
 
-alias c='clear'
-alias ls='ls -G'
-alias ll='ls -lh'
-alias la='ls -la'
-alias pse='ps -ef | grep -i'
-alias awk='gawk'
-alias lsof='lsof -i -Pn'
-alias bexec='bundle exec'
-
-alias pendrive='cd /Volumes/PENDRIVEL'
-
-# installing vim via homebrew:
-# brew install macvim --override-system-vim --enable-clipboard
-alias gvim='vim -g --servername `_basedir`'
-
-# python virtualenv shortcuts
-alias pyenv='virtualenv --python=/usr/local/bin/python --clear --no-site-packages --distribute'
-alias pyenv3='virtualenv --python=/usr/local/bin/python3 --clear --no-site-packages --distribute'
-
+# bash options
 shopt -s checkwinsize
 shopt -s cdspell
 shopt -s globstar
@@ -130,7 +113,7 @@ if [ -s ~/.rvm/scripts/rvm ]; then source ~/.rvm/scripts/rvm; fi
 if [ -s ~/.pvm/core ]; then source ~/.pvm/core/bin/activate; fi
 
 # bootstrap nvm (node.js version manager) if avaliable
-if [ -s ~/.nvm/nvm.sh ]; then source ~/.nvm/nvm.sh; fi
+# if [ -s ~/.nvm/nvm.sh ]; then source ~/.nvm/nvm.sh; fi
 
 # setting the bash PS1 prompt to my liking
 # example: export PS1="\u@\h: \W \$ "
