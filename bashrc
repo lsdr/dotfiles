@@ -69,9 +69,9 @@ fi
 export GIT_PS1_SHOWDIRTYSTATE=true
 
 # oracle instant client support
-if [ -d /usr/local/lib/oracle/instantclient_10_2 ]; then
-  export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/lib/oracle/instantclient_10_2
-fi
+# if [ -d /usr/local/lib/oracle/instantclient_10_2 ]; then
+#   export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/lib/oracle/instantclient_10_2
+# fi
 
 # "private" helper functions
 function _basedir {
