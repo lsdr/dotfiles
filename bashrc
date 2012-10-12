@@ -38,11 +38,6 @@ if [ -d /usr/local/lib/node_modules ]; then
   export NODE_PATH=/usr/local/lib/node_modules
 fi
 
-# groovy setting
-if [ -d /usr/local/Cellar/groovy/1.8.5/libexec ]; then
-  export GROOVY_HOME=/usr/local/Cellar/groovy/1.8.5/libexec
-fi
-
 # set x86_64 flags
 export CFLAGS="-arch x86_64 -O2"
 export ARCHFLAGS="-arch x86_64"
