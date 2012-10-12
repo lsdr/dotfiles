@@ -24,14 +24,14 @@ export VIM_APP_DIR=~/Code
 alias gvim='vim -g --servername `_basedir`'
 
 # java-related settings
-export JAVA_HOME=`/usr/libexec/java_home`
-export ANT_HOME=/usr/share/ant
-export ANT_OPTS="-Xms512m -Xmx512m"
-
+# export JAVA_HOME=`/usr/libexec/java_home`
+# export ANT_HOME=/usr/share/ant
+# export ANT_OPTS="-Xms512m -Xmx512m"
+#
 # scala-related settings
-if [ -d /usr/local/Cellar/scala/2.9.1-1/libexec ]; then
-  export SCALA_HOME=/usr/local/Cellar/scala/2.9.1-1/libexec
-fi
+# if [ -d /usr/local/Cellar/scala/2.9.1-1/libexec ]; then
+#   export SCALA_HOME=/usr/local/Cellar/scala/2.9.1-1/libexec
+# fi
 
 # node settings
 if [ -d /usr/local/lib/node_modules ]; then
