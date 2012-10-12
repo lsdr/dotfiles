@@ -76,6 +76,9 @@ export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.1.2/jars"
 export EC2_URL='https://ec2.sa-east-1.amazonaws.com'
 
 # git prompt pimpin'
+if [ -e /usr/local/etc/git-prompt.sh ]; then
+  source /usr/local/etc/git-prompt.sh
+fi
 export GIT_PS1_SHOWDIRTYSTATE=true
 
 # oracle instant client support
