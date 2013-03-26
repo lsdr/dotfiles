@@ -13,6 +13,9 @@ alias awk='gawk'
 alias pyenv='virtualenv --python=/usr/local/bin/python --clear --no-site-packages --distribute'
 alias pyenv3='virtualenv --python=/usr/local/bin/python3 --clear --no-site-packages --distribute'
 
+# emacs alias
+alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
+
 # bundler exec shortcut
 alias bexec='bundle exec'
 
