@@ -1,10 +1,27 @@
-#!/bin/sh
+#!/usr/bin/env python
 
-cp bash_profile.sh ~/.bash_profile
-cp bash_colors.sh ~/.bash_colors
-cp bashrc.sh ~/.bashrc
+import os
+import time
+from glob import glob
+from stat import ST_MTIME
 
-cp irbrc ~/.irbrc
-cp caprc ~/.caprc
-cp gemrc ~/.gemrc
-cp rvmrc ~/.rvmrc
+refs  = glob('*')
+files = filter(os.path.isfile, refs)
+
+def isinstalled(path):
+    f_path = os.path.join(os.path.expanduser('~'), "."+path)
+    return os.path.isfile(f_path)
+
+if __name__ == '__main__':
+    for f in files:
+        if isinstalled(f):
+            print "'%s' is installed in ~/." % f
+        else:
+            print "'%s' not found in ~" % f
+        _ts  = os.stat(f)[ST_MTIME]
+        _mts = time.ctime(os.path.getmtime(f))
+        print "[local] '%s' last modified in %s (%s)" % (f, _mts, _ts)
+        print
+
+# vim: ft=python
+
