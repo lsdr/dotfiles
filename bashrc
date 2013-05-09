@@ -6,10 +6,6 @@ export LC_ALL="en_US.UTF-8"
 # PATH setup bonanza
 PATH="$PATH:/Users/lsdr/Scripts"
 
-if [ -d /Users/lsdr/.cabal/bin ]; then
-  PATH="$PATH:/Users/lsdr/.cabal/bin"
-fi
-
 if [ -d /usr/local/share/python ]; then
   PATH="/usr/local/share/python:$PATH"
 fi
@@ -45,9 +41,6 @@ export ARCHFLAGS="-arch x86_64"
 export CLICOLOR=1
 export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
-export RUBYOPT=rubygems
-#export SKIP_MEMCACHED=true
-#export EVENT_NOKQUEUE=1
 
 # pip now requires a virtualenv to run
 export PIP_REQUIRE_VIRTUALENV=true
