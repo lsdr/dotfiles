@@ -4,13 +4,7 @@
 export LC_ALL="en_US.UTF-8"
 
 # PATH setup bonanza
-PATH="$PATH:/Users/lsdr/Scripts"
-
-if [ -d /usr/local/share/python ]; then
-  PATH="/usr/local/share/python:$PATH"
-fi
-
-PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+PATH="/usr/local/bin:/usr/local/sbin:$PATH:/Users/lsdr/Scripts"
 MANPATH="$MANPATH:/usr/local/man"
 export PATH MANPATH
 
@@ -97,7 +91,6 @@ if [ -s ~/.pvm/core ]; then source ~/.pvm/core/bin/activate; fi
 
 # setting the bash PS1 prompt to my liking
 # example: export PS1="\u@\h: \W \$ "
-# if [ -s ~/.bash_colors ]; then source ~/.bash_colors; fi
 PS1='[$(_rvm_prompt)] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\]\[\033[1;36m\]$(__git_ps1)\[\033[0m\]\n\[\033[1;34m\]\$\[\033[0m\] '
 
 ## references:
