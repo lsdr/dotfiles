@@ -5,14 +5,22 @@ import time
 from glob import glob
 from stat import ST_MTIME
 
-refs  = glob('*')
-files = filter(os.path.isfile, refs)
+SKIP_FILES = [
+    'flush',
+    'gemsets.default.gems',
+    'zshrc'
+]
+
+def files_to_flush(path):
+    return (os.path.isfile(path) and path not in SKIP_FILES)
 
 def isinstalled(path):
     f_path = os.path.join(os.path.expanduser('~'), "."+path)
     return os.path.isfile(f_path)
 
 if __name__ == '__main__':
+    files = filter(files_to_flush, glob('*'))
+
     for f in files:
         if isinstalled(f):
             print "'%s' is installed in ~/." % f
