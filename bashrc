@@ -5,6 +5,7 @@ export LC_ALL="en_US.UTF-8"
 
 # PATH setup bonanza
 PATH="/usr/local/bin:/usr/local/sbin:$PATH:/Users/lsdr/Scripts"
+PATH=$PATH:$HOME/.rvm/bin
 MANPATH="$MANPATH:/usr/local/man"
 export PATH MANPATH
 
