@@ -5,7 +5,6 @@ export LC_ALL="en_US.UTF-8"
 
 # PATH setup bonanza
 PATH="/usr/local/bin:/usr/local/sbin:$PATH:/Users/lsdr/Scripts"
-PATH=$PATH:$HOME/.rvm/bin
 MANPATH="$MANPATH:/usr/local/man"
 export PATH MANPATH
 
@@ -66,10 +65,6 @@ function _basedir {
   basename `pwd`
 }
 
-function _rvm_prompt {
-  $rvm_path/bin/rvm-prompt v
-}
-
 # bash options
 shopt -s checkwinsize
 shopt -s cdspell
@@ -84,15 +79,12 @@ if [ -s /usr/local/etc/bash_completion ]; then
   source /usr/local/etc/bash_completion || echo 'bash completions unavaliable.'
 fi
 
-# bootstrap rvm if avaliable
-if [ -s ~/.rvm/scripts/rvm ]; then source ~/.rvm/scripts/rvm; fi
-
 # bootstrap core virtualenv if avaliable
 if [ -s ~/.pvm/core ]; then source ~/.pvm/core/bin/activate; fi
 
 # setting the bash PS1 prompt to my liking
 # example: export PS1="\u@\h: \W \$ "
-PS1='[$(_rvm_prompt)] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\]\[\033[1;36m\]$(__git_ps1)\[\033[0m\]\n\[\033[1;34m\]\$\[\033[0m\] '
+PS1='[] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\]\[\033[1;36m\]$(__git_ps1)\[\033[0m\]\n\[\033[1;34m\]\$\[\033[0m\] '
 
 ## references:
 # http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
