@@ -65,6 +65,10 @@ function _basedir {
   basename `pwd`
 }
 
+function __rbenv_ps1 {
+  rbenv version | sed -e 's/\-.*$//'
+}
+
 # bash options
 shopt -s checkwinsize
 shopt -s cdspell
@@ -87,7 +91,7 @@ if [ -s ~/.rbenv/shims ]; then eval "$(rbenv init -)"; fi
 
 # setting the bash PS1 prompt to my liking
 # example: export PS1="\u@\h: \W \$ "
-PS1='[] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\]\[\033[1;36m\]$(__git_ps1)\[\033[0m\]\n\[\033[1;34m\]\$\[\033[0m\] '
+PS1='[$(__rbenv_ps1)] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\]\[\033[1;36m\]$(__git_ps1)\[\033[0m\]\n\[\033[1;34m\]\$\[\033[0m\] '
 
 ## references:
 # http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
