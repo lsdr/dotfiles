@@ -2,6 +2,7 @@
 [
   'irb/completion',
   'looksee',
+  'pry',
   'ap'
 ].each do |_gem|
   begin
@@ -30,16 +31,3 @@ rescue Exception => e
   puts e.message
 end
 
-# helper methods
-# local_methods; stolen from lucashungaro (github.com/lucashungaro/dotfiles)
-class Object
-  def local_methods
-    (methods - Object.instance_methods).sort
-  end
-end
-
-# railties
-if defined?(Rails) && !Object.const_defined?("RAILS_DEFAULT_LOGGER")
-  require "logger"
-  RAILS_DEFAULT_LOGGER = Logger.new(STDOUT)
-end
