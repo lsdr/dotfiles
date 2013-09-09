@@ -82,6 +82,9 @@ fi
 # bootstrap core virtualenv if avaliable
 if [ -s ~/.pvm/core ]; then source ~/.pvm/core/bin/activate; fi
 
+# bootstrap rbenv if avaliable
+if [ -s ~/.rbenv/shims ]; then eval "$(rbenv init -)"; fi
+
 # setting the bash PS1 prompt to my liking
 # example: export PS1="\u@\h: \W \$ "
 PS1='[] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\]\[\033[1;36m\]$(__git_ps1)\[\033[0m\]\n\[\033[1;34m\]\$\[\033[0m\] '
