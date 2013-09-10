@@ -66,7 +66,7 @@ function _basedir {
 }
 
 function __rbenv_ps1 {
-  rbenv version | sed -e 's/\-.*$//'
+  rbenv version | awk '{print $1}' | sed -e 's/\-.*$//'
 }
 
 # bash options
