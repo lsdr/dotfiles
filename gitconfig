@@ -1,10 +1,14 @@
 [user]
   name = Luiz Rocha
+  email = lsdrocha@gmail.com
+[github]
+  user = lsdr
 [color]
   branch = auto
   status = auto
   diff = auto
   pager = true
+  ui = true
 [core]
   excludesfile = ~/.gitignore
 [push]
@@ -13,21 +17,18 @@
   ci = commit
   co = checkout
   b = branch -a
-  st = status
-  w = whatchanged
+  st = status -sb
   sth = stash
-  los = log --stat
+  los = log --stat --no-merges --pretty=oneline
   lop = log -p
-  llog = log --pretty='format:%Cgreen%h %Cred%ar %Creset-- %s (%an)' --max-count=20
-  slog = shortlog -n
+  llog = log --oneline --decorate --max-count=10
+  full-log = shortlog -n
   stats = shortlog -s -n --no-merges
-  tags = tag -l -n30
+  tags = tag -l -n15
   last = cat-file commit HEAD
   count = !git log --author='Luiz Rocha' --oneline --no-merges | wc -l | awk '{print $1}'
-  standup = shortlog --since=yesterday
   uncommit = reset --soft HEAD^
 [log]
   date = rfc
-[url "git@github.com:lsdr/"]
-  insteadOf = github:
-
+[help]
+	autocorrect = 1
