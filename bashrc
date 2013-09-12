@@ -11,7 +11,7 @@ export PATH MANPATH
 # editor settings
 export EDITOR=vim
 export VIM_APP_DIR=~/Code
-alias gvim='vim -g --servername `_basedir`'
+alias gvim='vim -g --servername `__basedir`'
 
 # java-related settings
 # export JAVA_HOME="$(/usr/libexec/java_home)"
@@ -60,19 +60,12 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 #   export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/lib/oracle/instantclient_10_2
 # fi
 
-# "private" helper functions
-function _basedir {
-  basename `pwd`
-}
-
-function __rbenv_ps1 {
-  rbenv version | awk '{print $1}' | sed -e 's/\-.*$//'
-}
-
 # bash options
 shopt -s checkwinsize
 shopt -s cdspell
 shopt -s globstar
+shopt -s nocaseglob
+shopt -s extglob
 shopt -s autocd
 
 shopt -u mailwarn
@@ -89,9 +82,47 @@ if [ -s ~/.pvm/core ]; then source ~/.pvm/core/bin/activate; fi
 # bootstrap rbenv if avaliable
 if [ -s ~/.rbenv/shims ]; then eval "$(rbenv init -)"; fi
 
-# setting the bash PS1 prompt to my liking
-# example: export PS1="\u@\h: \W \$ "
-PS1='[$(__rbenv_ps1)] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\]\[\033[1;36m\]$(__git_ps1)\[\033[0m\]\n\[\033[1;34m\]\$\[\033[0m\] '
+# "private" helper functions
+function __basedir {
+  basename `pwd`
+}
+
+function __rbenv_ps1 {
+  rbenv version | awk '{print $1}' | sed -e 's/\-.*$//'
+}
+
+function __setup_prompt {
+  history -a
+  history -c
+  history -r
+
+  local NO_COLOR="\[\e[0m\]"
+  local RED="\[\033[0;31m\]"
+  local LIGHT_RED="\[\033[1;31m\]"  
+  local GREEN="\[\033[0;32m\]"
+  local LIGHT_GREEN="\[\033[1;32m\]"
+  local ORANGE="\[\033[0;33m\]"
+  local YELLOW="\[\033[1;33m\]"
+  local BLUE="\[\033[0;34m\]"
+  local LIGHT_BLUE="\[\033[1;34m\]"
+  local PURPLE="\[\033[1;35m\]"
+  local MAGENTA="\[\033[1;35m\]"
+  local CYAN="\[\033[1;36m\]"
+  local LIGHT_CYAN="\[\033[1;36m\]"
+  local GRAY="\[\033[1;30m\]"
+  local LIGHT_GRAY="\[\033[0;37m\]"
+  local WHITE="\[\033[1;37m\]"  
+
+  local RUBY_PROMPT="${NO_COLOR}${GRAY}[$(__rbenv_ps1)]${NO_COLOR} "
+  local GIT_PROMPT="${NO_COLOR}${MAGENTA}$(__git_ps1)${NO_COLOR}"
+  
+  # setting the bash PS1 prompt to my liking
+  # example: export PS1="\u@\h: \W \$ "
+  # PS1='[$(__rbenv_ps1)] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\]\[\033[1;36m\]$(__git_ps1)\[\033[0m\]\n\[\033[1;34m\]\$\[\033[0m\] '
+  PS1="\n${RUBY_PROMPT}\w${GIT_PROMPT}\n\$ "
+}
+
+PROMPT_COMMAND=__setup_prompt
 
 ## references:
 # http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
