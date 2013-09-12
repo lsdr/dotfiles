@@ -28,9 +28,12 @@ if [ -d /usr/local/lib/node_modules ]; then
   export NODE_PATH=/usr/local/lib/node_modules
 fi
 
-# set x86_64 flags
-export CFLAGS="-arch x86_64 -O2"
-export ARCHFLAGS="-arch x86_64"
+# set x86_64 flags for my macs
+if [[ $OSTYPE == darwin* ]]; then
+  export CFLAGS="-arch x86_64 -O2"
+  export ARCHFLAGS="-arch x86_64"
+  export CC="/usr/bin/gcc-4.2"
+fi
 
 export CLICOLOR=1
 export HISTCONTROL=ignoredups
