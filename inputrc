@@ -4,5 +4,9 @@ set completion-ignore-case on
 # show all matches at once instead of asking for a second tab
 set show-all-if-ambiguous on
 
+# a second tab now navigate between completions
+TAB: menu-complete
+
 # add trailing slash to symlinked directories
 # set mark-symlinked-directories on
+
