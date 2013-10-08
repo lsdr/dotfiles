@@ -6,8 +6,9 @@ alias la='ls -la'
 alias pse='ps -ef | grep -i'
 alias lsof='lsof -i -Pn'
 
-# use GNU Awk in MacOS/BSD too
+# use GNU Awk/Sed in MacOS/BSD too
 alias awk='gawk'
+alias sed='gsed'
 
 # python virtualenv shortcuts
 alias pyenv='virtualenv --python=/usr/local/bin/python --clear --no-site-packages --distribute'
