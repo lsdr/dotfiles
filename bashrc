@@ -32,7 +32,7 @@ fi
 if [[ $OSTYPE == darwin* ]]; then
   export CFLAGS="-arch x86_64 -O2"
   export ARCHFLAGS="-arch x86_64"
-  export CC="/usr/bin/gcc-4.2"
+#  export CC="/usr/bin/gcc-4.2"
 fi
 
 export CLICOLOR=1
