@@ -124,7 +124,7 @@ function __setup_prompt {
   # setting the bash PS1 prompt to my liking
   # example: export PS1="\u@\h: \W \$ "
   # PS1='[$(__rbenv_ps1)] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\]\[\033[1;36m\]$(__git_ps1)\[\033[0m\]\n\[\033[1;34m\]\$\[\033[0m\] '
-  PS1="\n${RUBY_PROMPT}\w${GIT_PROMPT}\n\$ "
+  PS1="\n${RUBY_PROMPT}${PWD/#$HOME/~}${GIT_PROMPT}\n\$ "
 }
 
 PROMPT_COMMAND=__setup_prompt
