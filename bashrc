@@ -39,13 +39,6 @@ export CLICOLOR=1
 export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
 
-# pip now requires a virtualenv to run
-export PIP_REQUIRE_VIRTUALENV=true
-# pip respects the current virtualenv in use
-export PIP_RESPECT_VIRTUALENV=true
-# virtualenv uses distribute by default
-export VIRTUALENV_DISTRIBUTE=true
-
 # amazon web services
 if [ -d ~/.ec2 ]; then
   export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
@@ -57,8 +50,8 @@ fi
 # git prompt pimpin'
 if [ -e /usr/local/etc/git-prompt.sh ]; then
   source /usr/local/etc/git-prompt.sh
+  export GIT_PS1_SHOWDIRTYSTATE=true
 fi
-export GIT_PS1_SHOWDIRTYSTATE=true
 
 # oracle instant client support
 # if [ -d /usr/local/lib/oracle/instantclient_10_2 ]; then
@@ -81,8 +74,19 @@ if [ -s /usr/local/etc/bash_completion ]; then
   source /usr/local/etc/bash_completion || echo 'bash completions unavaliable.'
 fi
 
-# bootstrap core virtualenv if avaliable
-if [ -s ~/.pvm/core ]; then source ~/.pvm/core/bin/activate; fi
+# bootstrap python environment if avaliable
+if [ -s ~/.pvm/core ]; then
+  # pip now requires a virtualenv to run
+  export PIP_REQUIRE_VIRTUALENV=true
+  # pip respects the current virtualenv in use
+  export PIP_RESPECT_VIRTUALENV=true
+  # virtualenv uses distribute by default
+  export VIRTUALENV_DISTRIBUTE=true
+  # activate core virtualenv
+  source ~/.pvm/core/bin/activate 
+  # set PYTHONPATH to core
+  export PYTHONPATH=~/.pvm/core/lib/python2.7/site-packages
+fi
 
 # bootstrap rbenv if avaliable
 if [ -s ~/.rbenv/shims ]; then eval "$(rbenv init -)"; fi

@@ -11,14 +11,16 @@ alias awk='gawk'
 alias sed='gsed'
 
 # python virtualenv shortcuts
-alias pyenv='virtualenv --python=/usr/local/bin/python --clear --no-site-packages --distribute'
-alias pyenv3='virtualenv --python=/usr/local/bin/python3 --clear --no-site-packages --distribute'
+alias pyenv='virtualenv --python=/usr/bin/python --clear --no-site-packages --distribute'
+alias pyenv3='virtualenv --python=/usr/bin/python3 --clear --no-site-packages --distribute'
 
 # emacs alias
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 
-# bundler exec shortcut
+# development and coding aliases
+alias ipy='ipython --no-banner'
 alias bexec='bundle exec'
 
 # networking tools
 alias netlisten='ngrep -q -W byline "^(GET|POST) .*"'
+

@@ -31,4 +31,4 @@
 [log]
   date = rfc
 [help]
-	autocorrect = 1
+  autocorrect = 1
