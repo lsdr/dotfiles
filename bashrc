@@ -84,8 +84,8 @@ if [ -s ~/.pvm/core ]; then
   export VIRTUALENV_DISTRIBUTE=true
   # activate core virtualenv
   source ~/.pvm/core/bin/activate 
-  # set PYTHONPATH to core
-  export PYTHONPATH=~/.pvm/core/lib/python2.7/site-packages
+  # add homebrewed libs to PYTHONPATH 
+  export PYTHONPATH=/usr/local/lib/python2.7/site-packages
 fi
 
 # bootstrap rbenv if avaliable
