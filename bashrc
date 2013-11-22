@@ -14,7 +14,7 @@ export VIM_APP_DIR=~/Code
 alias gvim='vim -g --servername `__basedir`'
 
 # java-related settings
-# export JAVA_HOME="$(/usr/libexec/java_home)"
+export JAVA_HOME="$(/usr/libexec/java_home)"
 # export ANT_HOME=/usr/share/ant
 # export ANT_OPTS="-Xms512m -Xmx512m"
 #
