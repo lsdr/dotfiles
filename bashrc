@@ -48,8 +48,8 @@ if [ -d ~/.ec2 ]; then
 fi
 
 # git prompt pimpin'
-if [ -e /usr/local/etc/git-prompt.sh ]; then
-  source /usr/local/etc/git-prompt.sh
+if [ -e /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
+  source /usr/local/etc/bash_completion.d/git-prompt.sh
   export GIT_PS1_SHOWDIRTYSTATE=true
 fi
 
