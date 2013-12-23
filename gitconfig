@@ -21,7 +21,7 @@
   sth = stash
   los = log --stat --no-merges --pretty=oneline
   lop = log -p
-  llog = log --oneline --decorate --max-count=10
+  llog = log --oneline --decorate --max-count=20
   full-log = shortlog -n
   stats = shortlog -s -n --no-merges
   tags = tag -l -n15
