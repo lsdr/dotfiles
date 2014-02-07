@@ -137,3 +137,6 @@ PROMPT_COMMAND=__setup_prompt
 # http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
 # http://ss64.com/osx/
 # http://gnu.org/software/bash/manual/bashref.html#Bash-Conditional-Expressions
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
