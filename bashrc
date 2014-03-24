@@ -13,6 +13,12 @@ export EDITOR=vim
 export VIM_APP_DIR=~/Code
 alias gvim='vim -g --servername `__basedir`'
 
+# homebrew github token
+export HOMEBREW_GITHUB_API_TOKEN='678f4e009c52bd0ce4b42aeb0a215bc7716a27c5'
+
+# docker environment
+export DOCKER_HOST=tcp://localhost:4243
+
 # java-related settings
 export JAVA_HOME="$(/usr/libexec/java_home)"
 # export ANT_HOME=/usr/share/ant
