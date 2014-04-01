@@ -20,6 +20,7 @@ alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 # development and coding aliases
 alias ipy='ipython --no-banner'
 alias bexec='bundle exec'
+alias octave='octave -qf'
 
 # networking tools
 alias netlisten='ngrep -q -W byline "^(GET|POST) .*"'
