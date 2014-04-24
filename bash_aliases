@@ -21,6 +21,7 @@ alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 alias ipy='ipython --no-banner'
 alias bexec='bundle exec'
 alias octave='octave -qf'
+alias lisp='rlwrap sbcl'
 
 # networking tools
 alias netlisten='ngrep -q -W byline "^(GET|POST) .*"'
