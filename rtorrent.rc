@@ -1,0 +1,2 @@
+encryption = allow_incoming,enable_retry,prefer_plaintext
+peer_exchange = yes
