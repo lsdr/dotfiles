@@ -62,9 +62,13 @@ if [ -e /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
 fi
 
 # oracle instant client support
-# if [ -d /usr/local/lib/oracle/instantclient_10_2 ]; then
-#   export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/lib/oracle/instantclient_10_2
-# fi
+if [ -d /opt/oracle/instantclient_11_2 ]; then
+  export ORACLE_HOME=/opt/oracle/instantclient_11_2
+  export DYLD_LIBRARY_PATH=/opt/oracle/instantclient_11_2
+  export PATH=$PATH:$ORACLE_HOME/bin
+
+  alias sqlplus='rlwrap sqlplus'
+fi
 
 # bash options
 shopt -s checkwinsize
