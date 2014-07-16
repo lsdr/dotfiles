@@ -1,4 +1,10 @@
 # vim: ft=sh:
+# 
+# references:
+# http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
+# http://ss64.com/osx/
+# http://gnu.org/software/bash/manual/bashref.html#Bash-Conditional-Expressions
+#
 
 # iTerm2 needs this to show utf-8 correctly
 export LC_ALL="en_US.UTF-8"
@@ -25,11 +31,6 @@ export JAVA_HOME="$(/usr/libexec/java_home)"
 if [ -d /usr/local/opt/maven/libexec ]; then
   export M2_HOME="/usr/local/opt/maven/libexec"
 fi
-
-# scala-related settings
-# if [ -d /usr/local/Cellar/scala/2.9.1-1/libexec ]; then
-#   export SCALA_HOME=/usr/local/Cellar/scala/2.9.1-1/libexec
-# fi
 
 # node settings
 if [ -d /usr/local/lib/node_modules ]; then
@@ -146,10 +147,6 @@ function __setup_prompt {
 
 PROMPT_COMMAND=__setup_prompt
 
-## references:
-# http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
-# http://ss64.com/osx/
-# http://gnu.org/software/bash/manual/bashref.html#Bash-Conditional-Expressions
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
