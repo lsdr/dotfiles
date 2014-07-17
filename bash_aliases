@@ -5,7 +5,7 @@ alias ll='ls -lh'
 alias la='ls -la'
 alias pse='ps -ef | grep -i'
 alias lsof='lsof -i -Pn'
-alias lsize='ls | xargs du -sh'
+alias lsize='ls | xargs -I {} du -sh "{}"'
 
 # use GNU Awk/Sed in MacOS/BSD too
 alias awk='gawk'
