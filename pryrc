@@ -30,3 +30,7 @@ end
 
 # helpers
 def copy(*args) IO.popen('pbcopy', 'r+') { |clipboard| clipboard.puts args.map(&:inspect) }; end
+
+# emacs support
+Pry.config.correct_indent = false if ENV["EMACS"]
+
