@@ -16,9 +16,3 @@ fi
 #   echo
 # fi
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-### SSL CERT; brew install curl-ca-bundle
-export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
-
