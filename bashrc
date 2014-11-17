@@ -49,11 +49,13 @@ export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
 
 # amazon web services
-if [ -d ~/.ec2 ]; then
-  export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
-  export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
+if [ -d ~/.aws ]; then
+  # export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.aws/pk-*.pem | /usr/bin/head -1)"
+  # export EC2_CERT="$(/bin/ls "$HOME"/.aws/cert-*.pem | /usr/bin/head -1)"
   export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
   export EC2_URL='https://ec2.sa-east-1.amazonaws.com'
+
+  alias aws-ec2-list='aws ec2 describe-instances --output table --query '\''Reservations[].Instances[].[Tags[?Key==`Name`] | [0].Value, State.Name, InstanceId, PublicIpAddress, Placement.AvailabilityZone, VpcId, PrivateIpAddress, InstanceType'\'']'
 fi
 
 # git prompt pimpin'
