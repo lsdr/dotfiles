@@ -21,16 +21,14 @@ if defined?(Rails)
   end
 end
 
-# begin
-#   require "awesome_print"
-#   Pry.config.print = proc {|output, value| Pry::Helpers::BaseHelpers.stagger_output("=> #{value.ai}", output)}
-# rescue LoadError => err
-#    warn "=> Unable to load awesome_print"
-# end
-
-# helpers
-def copy(*args) IO.popen('pbcopy', 'r+') { |clipboard| clipboard.puts args.map(&:inspect) }; end
+if defined?(PryByebug)
+  Pry.commands.alias_command 'c', 'continue'
+  Pry.commands.alias_command 's', 'step'
+  Pry.commands.alias_command 'n', 'next'
+  Pry.commands.alias_command 'f', 'finish'
+end
 
 # emacs support
 Pry.config.correct_indent = false if ENV["EMACS"]
 
+# vim: set ft=ruby:
