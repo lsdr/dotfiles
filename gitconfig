@@ -14,9 +14,9 @@
 [push]
   default = current
 [alias]
+  b = branch -a
   ci = commit
   co = checkout
-  b = branch -a
   st = status -sb
   sth = stash
   los = log --stat --no-merges --pretty=oneline
@@ -32,3 +32,5 @@
   date = rfc
 [help]
   autocorrect = 1
+[fetch]
+  prune = true

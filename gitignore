@@ -11,3 +11,6 @@
 bkp/*
 .idea/*
 .projectile
+
+.rbenv-*
+.azk
