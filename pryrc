@@ -1,3 +1,7 @@
+if defined? AwesomePrint
+  AwesomePrint.pry!
+end
+
 Pry.config.prompt = proc do |obj, level, _|
   prompt = ""
   prompt << "#{RUBY_VERSION}"
@@ -28,7 +32,6 @@ end
 
 begin
   require 'hirb'
-
   Hirb.enable
 
   old_print = Pry.config.print
