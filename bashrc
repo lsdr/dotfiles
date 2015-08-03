@@ -25,10 +25,6 @@ export DOCKER_HOST=tcp://localhost:4243
 # java-related settings
 export JAVA_HOME="$(/usr/libexec/java_home)"
 
-if [ -d /usr/local/opt/maven/libexec ]; then
-  export M2_HOME="/usr/local/opt/maven/libexec"
-fi
-
 # node settings
 if [ -d /usr/local/lib/node_modules ]; then
   export NODE_PATH=/usr/local/lib/node_modules
@@ -46,13 +42,9 @@ export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
 
 # amazon web services
-if [ -d ~/.aws ]; then
-  # export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.aws/pk-*.pem | /usr/bin/head -1)"
-  # export EC2_CERT="$(/bin/ls "$HOME"/.aws/cert-*.pem | /usr/bin/head -1)"
-  export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
-  export EC2_URL='https://ec2.sa-east-1.amazonaws.com'
-
-  alias aws-ec2-list='aws ec2 describe-instances --output table --query '\''Reservations[].Instances[].[Tags[?Key==`Name`] | [0].Value, State.Name, InstanceId, PublicIpAddress, Placement.AvailabilityZone, VpcId, PrivateIpAddress, InstanceType'\'']'
+if [ -e /usr/local/bin/aws ]; then
+  # aws-cli autocomplete
+  complete -C aws_completer aws
 fi
 
 # git prompt pimpin'
