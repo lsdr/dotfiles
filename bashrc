@@ -127,13 +127,14 @@ function __setup_prompt {
   local LIGHT_GRAY="\[\033[0;37m\]"
   local WHITE="\[\033[1;37m\]"
 
-  local RUBY_PROMPT="${NO_COLOR}${GRAY}[$(__rbenv_ps1)]${NO_COLOR} "
+  local RUBY_PROMPT="${NO_COLOR}${CYAN}[$(__rbenv_ps1)]${NO_COLOR} "
+  local PATH_PROMPT="${NO_COLOR}${PWD/#$HOME/~}${NO_COLOR}"
   local GIT_PROMPT="${NO_COLOR}${MAGENTA}$(__git_ps1)${NO_COLOR}"
 
   # setting the bash PS1 prompt to my liking
   # example: export PS1="\u@\h: \W \$ "
   # PS1='[$(__rbenv_ps1)] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\]\[\033[1;36m\]$(__git_ps1)\[\033[0m\]\n\[\033[1;34m\]\$\[\033[0m\] '
-  PS1="\n${RUBY_PROMPT}${PWD/#$HOME/~}${GIT_PROMPT}\n\$ "
+  PS1="\n${RUBY_PROMPT}${PATH_PROMPT}${GIT_PROMPT}\n\$ "
 }
 
 PROMPT_COMMAND=__setup_prompt
