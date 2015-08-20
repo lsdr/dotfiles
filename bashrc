@@ -1,5 +1,5 @@
 # vim: ft=sh:
-# 
+#
 # references:
 # http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
 # http://ss64.com/osx/
@@ -20,7 +20,7 @@ export VIM_APP_DIR=~/Code
 alias gvim='vim -g --servername `__basedir`'
 
 # docker environment
-export DOCKER_HOST=tcp://localhost:4243
+# export DOCKER_HOST=tcp://localhost:4243
 
 # java-related settings
 export JAVA_HOME="$(/usr/libexec/java_home)"
@@ -88,8 +88,8 @@ if [ -s ~/.pvm/core ]; then
   # virtualenv uses distribute by default
   export VIRTUALENV_DISTRIBUTE=true
   # activate core virtualenv
-  source ~/.pvm/core/bin/activate 
-  # add homebrewed libs to PYTHONPATH 
+  source ~/.pvm/core/bin/activate
+  # add homebrewed libs to PYTHONPATH
   export PYTHONPATH=/usr/local/lib/python2.7/site-packages
 fi
 
@@ -112,7 +112,7 @@ function __setup_prompt {
 
   local NO_COLOR="\[\e[0m\]"
   local RED="\[\033[0;31m\]"
-  local LIGHT_RED="\[\033[1;31m\]"  
+  local LIGHT_RED="\[\033[1;31m\]"
   local GREEN="\[\033[0;32m\]"
   local LIGHT_GREEN="\[\033[1;32m\]"
   local ORANGE="\[\033[0;33m\]"
@@ -125,11 +125,11 @@ function __setup_prompt {
   local LIGHT_CYAN="\[\033[1;36m\]"
   local GRAY="\[\033[1;30m\]"
   local LIGHT_GRAY="\[\033[0;37m\]"
-  local WHITE="\[\033[1;37m\]"  
+  local WHITE="\[\033[1;37m\]"
 
   local RUBY_PROMPT="${NO_COLOR}${GRAY}[$(__rbenv_ps1)]${NO_COLOR} "
   local GIT_PROMPT="${NO_COLOR}${MAGENTA}$(__git_ps1)${NO_COLOR}"
-  
+
   # setting the bash PS1 prompt to my liking
   # example: export PS1="\u@\h: \W \$ "
   # PS1='[$(__rbenv_ps1)] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\]\[\033[1;36m\]$(__git_ps1)\[\033[0m\]\n\[\033[1;34m\]\$\[\033[0m\] '
