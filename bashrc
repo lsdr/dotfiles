@@ -31,8 +31,9 @@ if [ -d /usr/local/lib/node_modules ]; then
 fi
 
 # rust-related settings
-if [ -d /Users/lsdr/.rsenv/rust-src/src ]; then
-  export RUST_SRC_PATH=/Users/lsdr/.rsenv/rust-src/src
+if [ -d /Users/lsdr/.cargo ]; then
+  export PATH=$PATH:$HOME/.cargo/bin
+  export RUST_SRC_PATH=$HOME/.cargo/rust-src/src
 fi
 
 # haskell-related settings
