@@ -82,16 +82,17 @@ fi
 
 # bootstrap python environment if avaliable
 if [ -s ~/.pvm/core ]; then
+  # export PYTHON_VERSION=$(cat ~/.pvm/core/VERSION)
+
   # pip now requires a virtualenv to run
   export PIP_REQUIRE_VIRTUALENV=true
-  # pip respects the current virtualenv in use
   export PIP_RESPECT_VIRTUALENV=true
-  # virtualenv uses distribute by default
   export VIRTUALENV_DISTRIBUTE=true
+
   # activate core virtualenv
   source ~/.pvm/core/bin/activate
   # add homebrewed libs to PYTHONPATH
-  export PYTHONPATH=/usr/local/lib/python2.7/site-packages
+  # export PYTHONPATH="/usr/local/lib/python$PYTHON_VERSION/site-packages"
 fi
 
 # bootstrap rbenv if avaliable
@@ -139,6 +140,9 @@ function __setup_prompt {
 }
 
 PROMPT_COMMAND=__setup_prompt
+
+### setting the fuck up
+eval "$(thefuck --alias)"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

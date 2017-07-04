@@ -12,8 +12,8 @@ alias awk='gawk'
 alias sed='gsed'
 
 # python virtualenv shortcuts
-alias pyenv='virtualenv --python=/usr/bin/python --clear --no-site-packages --distribute'
-alias pyenv3='virtualenv --python=/usr/bin/python3 --clear --no-site-packages --distribute'
+alias pyenv='virtualenv --python=/usr/bin/python --clear'
+alias pyenv3='virtualenv --python=/usr/local/bin/python3 --clear'
 
 # emacs alias
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
