@@ -81,7 +81,7 @@ if [ -s /usr/local/etc/bash_completion ]; then
 fi
 
 # bootstrap python environment if avaliable
-if [ -s ~/.pvm/core ]; then
+if [ -s ~/.pvm/current ]; then
   # export PYTHON_VERSION=$(cat ~/.pvm/core/VERSION)
 
   # pip now requires a virtualenv to run
@@ -89,10 +89,16 @@ if [ -s ~/.pvm/core ]; then
   export PIP_RESPECT_VIRTUALENV=true
   export VIRTUALENV_DISTRIBUTE=true
 
+  # pipup script needs requires columns
+  export PIP_FORMAT=columns
+
   # activate core virtualenv
-  source ~/.pvm/core/bin/activate
+  source ~/.pvm/current/bin/activate
   # add homebrewed libs to PYTHONPATH
   # export PYTHONPATH="/usr/local/lib/python$PYTHON_VERSION/site-packages"
+
+  # enable pip autocompletion
+  eval "`pip completion --bash`"
 fi
 
 # bootstrap rbenv if avaliable
