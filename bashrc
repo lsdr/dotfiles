@@ -147,9 +147,6 @@ function __setup_prompt {
 
 PROMPT_COMMAND=__setup_prompt
 
-### setting the fuck up
-eval "$(thefuck --alias)"
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
