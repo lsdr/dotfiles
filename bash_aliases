@@ -23,7 +23,7 @@ alias ipy='ipython --no-banner'
 alias bexec='bundle exec'
 alias octave='octave -qf'
 alias lisp='rlwrap sbcl'
-# alias ghci='stack ghci'
+alias ghci='stack ghci'
 
 # networking tools
 alias netlisten='ngrep -q -W byline "^(GET|POST) .*"'
