@@ -7,6 +7,7 @@
   branch = auto
   status = auto
   diff = auto
+  interactive = true
   pager = true
   ui = true
 [core]
