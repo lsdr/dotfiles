@@ -17,10 +17,12 @@ export PATH MANPATH
 # editor settings
 export EDITOR=vim
 export VIM_APP_DIR=~/Code
-alias gvim='vim -g --servername `__basedir`'
 
-# docker environment
-# export DOCKER_HOST=tcp://localhost:4243
+# set x86_64 flags for my macs
+if [[ $OSTYPE == darwin* ]]; then
+  export CFLAGS="-arch x86_64 -O2"
+  export ARCHFLAGS="-arch x86_64"
+fi
 
 # java-related settings
 export JAVA_HOME="$(/usr/libexec/java_home)"
@@ -30,22 +32,10 @@ if [ -d /usr/local/lib/node_modules ]; then
   export NODE_PATH=/usr/local/lib/node_modules
 fi
 
-# rust-related settings
-if [ -d /Users/lsdr/.cargo ]; then
-  export PATH=$PATH:$HOME/.cargo/bin
-  export RUST_SRC_PATH=$HOME/.cargo/rust-src/src
-fi
-
-# haskell-related settings
-if [ -d /Users/lsdr/.cabal ]; then
-  export PATH=$PATH:$HOME/.cabal/bin
-fi
-
-# set x86_64 flags for my macs
-if [[ $OSTYPE == darwin* ]]; then
-  export CFLAGS="-arch x86_64 -O2"
-  export ARCHFLAGS="-arch x86_64"
-#  export CC="/usr/bin/gcc-4.2"
+# bootstrap asdf (multi-lang version control)
+# https://github.com/asdf-vm/asdf
+if [ -f /usr/local/opt/asdf/asdf.sh ]; then
+  source /usr/local/opt/asdf/asdf.sh
 fi
 
 export CLICOLOR=1
@@ -101,16 +91,13 @@ if [ -s ~/.pvm/current ]; then
   eval "`pip completion --bash`"
 fi
 
-# bootstrap rbenv if avaliable
-if [ -s ~/.rbenv/shims ]; then eval "$(rbenv init -)"; fi
-
 # "private" helper functions
 function __basedir {
   basename `pwd`
 }
 
-function __rbenv_ps1 {
-  rbenv version | awk '{print $1}' | sed -e 's/\-.*$//'
+function __highlight_ps1 {
+  hostname -s
 }
 
 function __setup_prompt {
@@ -135,7 +122,7 @@ function __setup_prompt {
   local LIGHT_GRAY="\[\033[0;37m\]"
   local WHITE="\[\033[1;37m\]"
 
-  local RUBY_PROMPT="${NO_COLOR}${CYAN}[$(__rbenv_ps1)]${NO_COLOR} "
+  local RUBY_PROMPT="${NO_COLOR}${CYAN}[$(__highlight_ps1)]${NO_COLOR} "
   local PATH_PROMPT="${NO_COLOR}${PWD/#$HOME/~}${NO_COLOR}"
   local GIT_PROMPT="${NO_COLOR}${MAGENTA}$(__git_ps1)${NO_COLOR}"
 
@@ -147,6 +134,6 @@ function __setup_prompt {
 
 PROMPT_COMMAND=__setup_prompt
 
-### Added by the Heroku Toolbelt
+# heroku toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
