@@ -34,9 +34,16 @@ fi
 
 # bootstrap asdf (multi-lang version control)
 # https://github.com/asdf-vm/asdf
-if [ -f /usr/local/opt/asdf/asdf.sh ]; then
-  source /usr/local/opt/asdf/asdf.sh
+ASDF_SCRIPT=$HOME/.asdf/asdf.sh
+if [ -f $ASDF_SCRIPT ]; then
+  source $ASDF_SCRIPT
 fi
+
+ASDF_COMPLETION=$HOME/.asdf/completions/asdf.bash
+if [ -f $ASDF_COMPLETION ]; then
+  source $ASDF_COMPLETION
+fi
+
 
 export CLICOLOR=1
 export HISTCONTROL=ignoredups
