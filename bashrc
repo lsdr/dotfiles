@@ -144,3 +144,8 @@ PROMPT_COMMAND=__setup_prompt
 # heroku toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# thefuck bootstrap
+eval $(thefuck --alias)
+
+#### automated stuff that crufts the pristine config!
+
