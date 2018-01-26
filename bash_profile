@@ -8,7 +8,8 @@ if [ -e ~/.bash_aliases ]; then
   source ~/.bash_aliases
 fi
 
-FORTUNES='dune dune-messiah red-mars green-mars quotes'
+FORTUNES='dune dune-messiah red-mars green-mars quotes ursula tyson sagan
+dispossessed'
 
 if which fortune > /dev/null; then
   echo "________________________________________________________________________________"
