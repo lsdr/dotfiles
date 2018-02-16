@@ -44,7 +44,6 @@ if [ -f $ASDF_COMPLETION ]; then
   source $ASDF_COMPLETION
 fi
 
-
 export CLICOLOR=1
 export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
@@ -96,6 +95,11 @@ if [ -s ~/.pvm/current ]; then
 
   # enable pip autocompletion
   eval "`pip completion --bash`"
+fi
+
+# setting pipenv up
+if [ -x $(which pipenv) ]; then
+  eval "$(pipenv --completion)"
 fi
 
 # "private" helper functions
