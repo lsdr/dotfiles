@@ -12,7 +12,7 @@
   ui = true
 [core]
   excludesfile = ~/.gitignore
-	autocrlf = input
+  autocrlf = input
 [push]
   default = current
 [alias]
@@ -30,6 +30,7 @@
   last = cat-file commit HEAD
   count = !git log --author='Luiz Rocha' --oneline --no-merges | wc -l | awk '{print $1}'
   uncommit = reset --soft HEAD^
+  remup = remote update
 [log]
   date = rfc
 [help]
