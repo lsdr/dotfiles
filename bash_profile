@@ -9,7 +9,7 @@ if [ -e ~/.bash_aliases ]; then
 fi
 
 FORTUNES='dune dune-messiah red-mars green-mars quotes ursula tyson sagan
-dispossessed'
+dispossessed blue-mars career freedom engineering'
 
 if which fortune > /dev/null; then
   echo "________________________________________________________________________________"
