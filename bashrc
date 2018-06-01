@@ -90,8 +90,6 @@ if [ -s ~/.pvm/current ]; then
 
   # activate core virtualenv
   source ~/.pvm/current/bin/activate
-  # add homebrewed libs to PYTHONPATH
-  # export PYTHONPATH="/usr/local/lib/python$PYTHON_VERSION/site-packages"
 
   # enable pip autocompletion
   eval "`pip completion --bash`"
@@ -147,9 +145,6 @@ PROMPT_COMMAND=__setup_prompt
 
 # heroku toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-# thefuck bootstrap
-eval $(thefuck --alias)
 
 #### automated stuff that crufts the pristine config!
 

@@ -27,4 +27,3 @@ alias ghci='stack ghci'
 
 # networking tools
 alias netlisten='ngrep -q -W byline "^(GET|POST) .*"'
-
