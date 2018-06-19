@@ -96,8 +96,13 @@ if [ -s ~/.pvm/current ]; then
 fi
 
 # setting pipenv up
-if [ -x $(which pipenv) ]; then
+if [ -x "$(which pipenv)" ]; then
   eval "$(pipenv --completion)"
+else
+  read -p 'pipenv not found. Install? [y/N]: ' install_pipenv
+  if [ "$install_pipenv" == "y" ] || [ "$install_pipenv" == "Y" ]; then
+    $(which pip) install pipenv
+  fi
 fi
 
 # "private" helper functions
