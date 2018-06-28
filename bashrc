@@ -98,6 +98,7 @@ fi
 # setting pipenv up
 if [ -x "$(which pipenv)" ]; then
   eval "$(pipenv --completion)"
+  export PIPENV_IGNORE_VIRTUALENVS=1
 else
   read -p 'pipenv not found. Install? [y/N]: ' install_pipenv
   if [ "$install_pipenv" == "y" ] || [ "$install_pipenv" == "Y" ]; then
