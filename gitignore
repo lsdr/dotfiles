@@ -12,3 +12,5 @@ bkp/*
 .azk
 tags
 docker-compose.lsdr.yml
+.vscode/*
+.vscode
