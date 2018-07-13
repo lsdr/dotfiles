@@ -76,29 +76,13 @@ if [ -s /usr/local/etc/bash_completion ]; then
   source /usr/local/etc/bash_completion || echo 'bash completions unavaliable.'
 fi
 
-# bootstrap python environment if avaliable
-if [ -s ~/.pvm/current ]; then
-  # export PYTHON_VERSION=$(cat ~/.pvm/core/VERSION)
-
-  # pip now requires a virtualenv to run
-  export PIP_REQUIRE_VIRTUALENV=true
-  export PIP_RESPECT_VIRTUALENV=true
-  export VIRTUALENV_DISTRIBUTE=true
-
-  # pipup script needs requires columns
-  export PIP_FORMAT=columns
-
-  # activate core virtualenv
-  source ~/.pvm/current/bin/activate
-
-  # enable pip autocompletion
-  eval "`pip completion --bash`"
-fi
+# bootstrap python if avaliable
+if [ -s ~/.pyenv/shims ]; then eval "$(pyenv init -)"; fi
 
 # setting pipenv up
 if [ -x "$(which pipenv)" ]; then
   eval "$(pipenv --completion)"
-  export PIPENV_IGNORE_VIRTUALENVS=1
+  eval "$(pip completion --bash)"
 else
   read -p 'pipenv not found. Install? [y/N]: ' install_pipenv
   if [ "$install_pipenv" == "y" ] || [ "$install_pipenv" == "Y" ]; then

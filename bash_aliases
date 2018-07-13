@@ -11,10 +11,6 @@ alias lsize='ls | xargs -I {} du -sh "{}"'
 alias awk='gawk'
 alias sed='gsed'
 
-# python virtualenv shortcuts
-alias pyenv='virtualenv --python=/usr/bin/python --clear'
-alias pyenv3='python3 -m venv --clear'
-
 # emacs alias
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 
