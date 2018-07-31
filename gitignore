@@ -14,3 +14,4 @@ tags
 docker-compose.lsdr.yml
 .vscode/*
 .vscode
+.mypy_cache
