@@ -6,6 +6,15 @@
   end
 end
 
+if ( ENV['RAILS_ENV'] || defined? Rails )
+  begin
+    require 'hirb'
+    Hirb.enable
+  rescue LoadError => e
+    warn e.message
+  end
+end
+
 if defined?(Pry)
   Pry.start
   exit

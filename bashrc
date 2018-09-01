@@ -27,6 +27,11 @@ fi
 # java-related settings
 export JAVA_HOME="$(/usr/libexec/java_home)"
 
+# go-related settings
+if [ -d /usr/local/opt/go/libexec/bin ]; then
+  export PATH=$PATH:/usr/local/opt/go/libexec/bin
+fi
+
 # node settings
 if [ -d /usr/local/lib/node_modules ]; then
   export NODE_PATH=/usr/local/lib/node_modules
