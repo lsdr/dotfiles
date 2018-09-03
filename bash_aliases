@@ -21,5 +21,8 @@ alias octave='octave -qf'
 alias lisp='rlwrap sbcl'
 alias ghci='stack ghci'
 
+# aws docker login
+alias docker_login='aws ecr get-login --no-include-email'
+
 # networking tools
 alias netlisten='ngrep -q -W byline "^(GET|POST) .*"'
