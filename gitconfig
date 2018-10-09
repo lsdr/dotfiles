@@ -19,6 +19,7 @@
   b = branch -a
   ci = commit
   co = checkout
+  tl = log --oneline --graph
   st = status -sb
   sth = stash
   los = log --stat --no-merges --pretty=oneline
