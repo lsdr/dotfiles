@@ -3,9 +3,13 @@ alias c='clear'
 alias ls='ls -G'
 alias ll='ls -lh'
 alias la='ls -la'
+# alias lt='ls --human-readable --size -1 -S --classify'
+alias lt='du -sh * | sort -h'
 alias pse='ps -ef | grep -i'
 alias lsof='lsof -i -Pn'
 alias lsize='ls | xargs -I {} du -sh "{}"'
+
+alias ghist='history|grep'
 
 # use GNU Awk/Sed in MacOS/BSD too
 alias awk='gawk'
