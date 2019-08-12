@@ -38,6 +38,12 @@ if [ -d /usr/local/lib/node_modules ]; then
   export NODE_PATH=/usr/local/lib/node_modules
 fi
 
+# flutter settings
+if [ -d /usr/local/flutter ]; then
+  export FLUTTER_PATH=/usr/local/flutter
+  export PATH=$PATH:/usr/local/flutter/bin
+fi
+
 # bootstrap asdf (multi-lang version control)
 # https://github.com/asdf-vm/asdf
 ASDF_SCRIPT=$HOME/.asdf/asdf.sh
