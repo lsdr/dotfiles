@@ -18,7 +18,7 @@ export EDITOR=vim
 export VIM_APP_DIR=~/Code
 
 # java-related settings
-export JAVA_HOME="$(/usr/libexec/java_home)"
+# export JAVA_HOME="$(/usr/libexec/java_home)"
 
 # amazon web services
 if [ -e /usr/local/bin/aws ]; then
@@ -79,29 +79,13 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# if [ "$color_prompt" = yes ]; then
-#     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-# else
-#     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-# fi
-# unset color_prompt force_color_prompt
-
-# # If this is an xterm set the title to user@host:dir
-# case "$TERM" in
-# xterm*|rxvt*)
-#     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-#     ;;
-# *)
-#     ;;
-# esac
-
 # "private" helper functions
 function __basedir {
   basename `pwd`
 }
 
 function __highlight_ps1 {
-  hostname -s
+  hostname -s | tr '[:upper:]' '[:lower:]'
 }
 
 function __setup_prompt {
@@ -126,14 +110,14 @@ function __setup_prompt {
   local LIGHT_GRAY="\[\033[0;37m\]"
   local WHITE="\[\033[1;37m\]"
 
-  local RUBY_PROMPT="${NO_COLOR}${CYAN}[$(__highlight_ps1)]${NO_COLOR} "
+  local HOST_PROMPT="${NO_COLOR}${CYAN}[$(__highlight_ps1)]${NO_COLOR} "
   local PATH_PROMPT="${NO_COLOR}${PWD/#$HOME/~}${NO_COLOR}"
   local GIT_PROMPT="${NO_COLOR}${MAGENTA}$(__git_ps1)${NO_COLOR}"
 
   # setting the bash PS1 prompt to my liking
   # example: export PS1="\u@\h: \W \$ "
   # PS1='[$(__rbenv_ps1)] \[\033[1;32m\]\u@\h\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\]\[\033[1;36m\]$(__git_ps1)\[\033[0m\]\n\[\033[1;34m\]\$\[\033[0m\] '
-  PS1="\n${RUBY_PROMPT}${PATH_PROMPT}${GIT_PROMPT}\n\$ "
+  PS1="\n${HOST_PROMPT}${PATH_PROMPT}${GIT_PROMPT}\n\$ "
 }
 
 PROMPT_COMMAND=__setup_prompt
