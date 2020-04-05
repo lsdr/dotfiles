@@ -27,6 +27,10 @@ fi
 # java-related settings
 export JAVA_HOME="$(/usr/libexec/java_home)"
 
+if [ -d /usr/local/opt/go/libexec/bin ]; then
+  export PATH="/usr/local/opt/openjdk/bin:$PATH"
+fi
+
 # go-related settings
 if [ -d /usr/local/opt/go/libexec/bin ]; then
   export GOPATH=/usr/local/opt/go/libexec/bin
