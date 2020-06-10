@@ -20,6 +20,11 @@ export VIM_APP_DIR=~/Code
 # java-related settings
 # export JAVA_HOME="$(/usr/libexec/java_home)"
 
+# ruby setup
+if [ -d $HOME/.gem/bin ]; then
+  export PATH="$HOME/.gem/bin:$PATH"
+fi
+
 # rust setup
 if [ -d $HOME/.cargo/bin ]; then
   export PATH="$HOME/.cargo/bin:$PATH"
@@ -147,3 +152,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+eval "$(thefuck --alias)"
+
+complete -C /usr/local/bin/terraform terraform
