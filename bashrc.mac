@@ -10,12 +10,12 @@
 export LC_ALL="en_US.UTF-8"
 
 # PATH setup bonanza
-PATH="/usr/local/bin:/usr/local/sbin:$PATH:/Users/lsdr/Scripts:/Users/lsdr/.local/bin"
+PATH="/usr/local/bin:/usr/local/sbin:$PATH:/Users/$USER/Scripts:/Users/$USER/.local/bin"
 MANPATH="$MANPATH:/usr/local/man"
 export PATH MANPATH
 
 # editor settings
-export EDITOR=vim
+export EDITOR=nvim
 export VIM_APP_DIR=~/Code
 
 # set x86_64 flags for my macs
@@ -47,6 +47,12 @@ if [ -d /usr/local/flutter ]; then
   export FLUTTER_PATH=/usr/local/flutter
   export PATH=$PATH:/usr/local/flutter/bin
 fi
+
+# heroku toolbelt
+if [ -d /usr/local/heroku ]; then
+  export PATH="/usr/local/heroku/bin:$PATH"
+fi
+
 
 # bootstrap asdf (multi-lang version control)
 # https://github.com/asdf-vm/asdf
@@ -148,9 +154,6 @@ function __setup_prompt {
 }
 
 PROMPT_COMMAND=__setup_prompt
-
-# heroku toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 
 #### automated stuff that crufts the pristine config!
 
