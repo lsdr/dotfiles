@@ -106,7 +106,13 @@ if [ -s /usr/local/etc/bash_completion ]; then
 fi
 
 # bootstrap python if avaliable
-if [ -s ~/.pyenv/shims ]; then eval "$(pyenv init -)"; fi
+if [ -s ~/.pyenv/shims ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+
+  eval "$(pyenv init --path)"
+  eval "$(pyenv init -)"
+fi
 
 # setting pipenv up
 if [ -x "$(which pipenv)" ]; then
