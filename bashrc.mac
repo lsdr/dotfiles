@@ -42,11 +42,17 @@ if [ -d /usr/local/lib/node_modules ]; then
   export NODE_PATH=/usr/local/lib/node_modules
 fi
 
-# flutter settings
-if [ -d /usr/local/flutter ]; then
-  export FLUTTER_PATH=/usr/local/flutter
-  export PATH=$PATH:/usr/local/flutter/bin
+
+if [ -d ~/.cargo ]; then
+  source "$HOME/.cargo/env"
 fi
+
+# flutter settings
+# if [ -x /usr/local/bin/flutter ]; then
+#   export FLUTTER_PATH=/usr/local/flutter
+#   export PATH=$PATH:/usr/local/flutter/bin
+#   export PATH="$PATH:`pwd`/flutter/bin"
+# fi
 
 # heroku toolbelt
 if [ -d /usr/local/heroku ]; then

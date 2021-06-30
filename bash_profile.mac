@@ -18,4 +18,3 @@ if which fortune > /dev/null; then
   echo
 fi
 
-source "$HOME/.cargo/env"
