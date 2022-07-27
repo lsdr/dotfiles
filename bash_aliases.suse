@@ -1,0 +1,37 @@
+# useful day-to-day aliases
+alias c='clear'
+alias ls='ls --color=auto'
+alias ll='ls -lh --color=auto'
+alias la='ls -la --color=auto'
+alias lt='ls --human-readable --size -1 -S --classify'
+alias lt='du -sh * | sort -h'
+alias pse='ps -ef | grep -i'
+alias lsof='lsof -i -Pn'
+alias lsize='ls | xargs -I {} du -sh "{}"'
+
+alias ghist='history|grep'
+
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# development and coding aliases
+alias ipy='ipython --no-banner'
+alias bexec='bundle exec'
+# alias octave='octave -qf'
+# alias lisp='rlwrap sbcl'
+# alias ghci='stack ghci'
+
+# networking tools
+alias netlisten='ngrep -q -W byline "^(GET|POST) .*"'
+
+# add an "alert" alias for long running commands. 
+# use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# suse specific aliases
+alias zyp='sudo zypper'
