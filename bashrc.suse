@@ -18,7 +18,7 @@ export EDITOR=vim
 export VIM_APP_DIR=~/Code
 
 # use most as pager if present
-if [-x /usr/bin/most ]; then
+if [ -x /usr/bin/most ]; then
   export PAGER=most
 fi
 
