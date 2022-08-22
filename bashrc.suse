@@ -17,18 +17,23 @@ esac
 export EDITOR=vim
 export VIM_APP_DIR=~/Code
 
+# use most as pager if present
+if [-x /usr/bin/most ]; then
+  export PAGER=most
+fi
+
 # java-related settings
 # export JAVA_HOME="$(/usr/libexec/java_home)"
 
 # ruby setup
-if [ -d $HOME/.local/share/gem/ruby/3.1.0/bin ]; then
-  export PATH="$HOME/.local/share/gem/ruby/3.1.0/bin:$PATH"
-fi
+# if [ -d $HOME/.local/share/gem/ruby/3.1.0/bin ]; then
+#   export PATH="$HOME/.local/share/gem/ruby/3.1.0/bin:$PATH"
+# fi
 
 # rust setup
-# if [ -d $HOME/.cargo/bin ]; then
-#   export PATH="$HOME/.cargo/bin:$PATH"
-# fi
+if [ -d $HOME/.cargo/bin ]; then
+  export PATH="$HOME/.cargo/bin:$PATH"
+fi
 
 # amazon web services
 # if [ -e /usr/local/bin/aws ]; then
@@ -58,15 +63,6 @@ HISTFILESIZE=10000
 # mail behave
 shopt -u mailwarn
 unset MAILCHECK
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# set variable identifying the chroot you work in
-# (used in the prompt below)
-# if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-#     debian_chroot=$(cat /etc/debian_chroot)
-# fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
@@ -153,6 +149,3 @@ fi
 #   fi
 # fi
 
-# eval "$(thefuck --alias)"
-
-# complete -C /usr/local/bin/terraform terraform
