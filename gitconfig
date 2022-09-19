@@ -16,6 +16,7 @@
   pager = less -FX
 [push]
   default = current
+	autoSetupRemote = true
 [alias]
   b = branch -a
   ci = commit
@@ -43,3 +44,5 @@
   rebase = false
 [init]
 	defaultBranch = main
+[status]
+	showStash = true
