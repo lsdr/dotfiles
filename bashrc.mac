@@ -122,7 +122,6 @@ fi
 
 # setting pipenv up
 if [ -x "$(which pipenv)" ]; then
-  eval "$(pipenv --completion)"
   eval "$(pip completion --bash)"
 else
   read -p 'pipenv not found. Install? [y/N]: ' install_pipenv
