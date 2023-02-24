@@ -2,12 +2,16 @@ if defined? AwesomePrint
   AwesomePrint.pry!
 end
 
-Pry.config.prompt = proc do |obj, level, _|
-  prompt = ""
-  prompt << "#{RUBY_VERSION}"
-  # prompt << " on #{Rails.version}" if defined?(Rails)
-  "#{prompt} (#{obj})> "
-end
+Pry.config.prompt = Pry::Prompt.new(
+  'ruby',
+  'lsdr ruby prompt',
+  [
+    proc do |obj, nest_level, _|
+      prompt = Pry::Helpers::Text.purple("#{RUBY_VERSION} [#{obj}]:")
+      "#{prompt} "
+    end
+  ]
+)
 
 Pry.config.exception_handler = proc do |output, exception, _|
   output.puts "\e[31m#{exception.class}: #{exception.message}"

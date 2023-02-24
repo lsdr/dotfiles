@@ -35,3 +35,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # suse specific aliases
 alias zyp='sudo zypper'
+
+# project aliases
+alias safc='docker-compose run --rm api sh'
+alias make-iso='docker-compose run --rm api bundle exec rake db:drop:all db:create:all db:migrate:with_data db:isolate:prepare_development'

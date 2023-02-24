@@ -22,6 +22,11 @@ if [ -x /usr/bin/most ]; then
   export PAGER=most
 fi
 
+# to make VcXsrv work with WSL
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+
+export PATH="$HOME/.local/bin:$PATH"
+
 # java-related settings
 # export JAVA_HOME="$(/usr/libexec/java_home)"
 

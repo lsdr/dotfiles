@@ -20,6 +20,7 @@
 [alias]
   b = branch -a
   ci = commit
+  cim = commit -m
   co = checkout
   tl = log --oneline --graph
   st = status -sb
