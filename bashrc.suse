@@ -40,6 +40,11 @@ if [ -d $HOME/.cargo/bin ]; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+# haskell setup
+if [ -d $HOME/.cabal/bin ]; then
+  export PATH="$PATH:/$HOME/.cabal/bin"
+fi
+
 # amazon web services
 # if [ -e /usr/local/bin/aws ]; then
 #   # aws-cli autocomplete
