@@ -108,6 +108,11 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# tilix support
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+  source /etc/profile.d/vte.sh
+fi
+
 # "private" helper functions
 function __basedir {
   basename `pwd`
