@@ -20,11 +20,28 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # bash-completion
 if [ -r /usr/share/bash-completion/bash_completion ]; then
-  . /usr/share/bash-completion/bash_completion
+  source /usr/share/bash-completion/bash_completion
+fi
+
+# git prompt
+if [ -r /usr/share/git/completion/git-prompt.sh ]; then
+  source /usr/share/git/completion/git-prompt.sh
+  export GIT_PS1_SHOWUPSTREAM="auto"
 fi
 
 # snap set up
 export PATH="/snap/bin:$PATH"
+
+# asdf-vm
+ASDF_SCRIPT=$HOME/.asdf/asdf.sh
+if [ -f $ASDF_SCRIPT ]; then
+  source $ASDF_SCRIPT
+fi
+
+ASDF_COMPLETION=$HOME/.asdf/completions/asdf.bash
+if [ -f $ASDF_COMPLETION ]; then
+  source $ASDF_COMPLETION
+fi
 
 # use most as pager if present
 # if [ -x /usr/bin/most ]; then
@@ -140,6 +157,6 @@ fi
 
 # load aliases
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+    source ~/.bash_aliases
 fi
 
