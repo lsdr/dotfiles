@@ -13,7 +13,7 @@ case $- in
 esac
 
 # editor settings
-export EDITOR=vim
+export EDITOR=nvim
 export VIM_APP_DIR=~/Code
 
 export PATH="$HOME/.local/bin:$PATH"
