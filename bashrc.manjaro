@@ -54,9 +54,9 @@ fi
 # fi
 
 # haskell setup
-# if [ -d $HOME/.cabal/bin ]; then
-#   export PATH="$PATH:/$HOME/.cabal/bin"
-# fi
+if [ -f "/home/lsdr/.ghcup/env" ]; then
+  source "/home/lsdr/.ghcup/env"
+fi
 
 # amazon web services
 # if [ -e /usr/local/bin/aws ]; then
