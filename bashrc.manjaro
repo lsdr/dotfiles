@@ -33,15 +33,15 @@ fi
 export PATH="/snap/bin:$PATH"
 
 # asdf-vm
-ASDF_SCRIPT=$HOME/.asdf/asdf.sh
+ASDF_SCRIPT=/opt/asdf-vm/asdf.sh
 if [ -f $ASDF_SCRIPT ]; then
   source $ASDF_SCRIPT
 fi
 
-ASDF_COMPLETION=$HOME/.asdf/completions/asdf.bash
-if [ -f $ASDF_COMPLETION ]; then
-  source $ASDF_COMPLETION
-fi
+# ASDF_COMPLETION=$HOME/.asdf/completions/asdf.bash
+# if [ -f $ASDF_COMPLETION ]; then
+#   source $ASDF_COMPLETION
+# fi
 
 # use most as pager if present
 # if [ -x /usr/bin/most ]; then
