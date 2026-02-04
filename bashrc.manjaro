@@ -33,15 +33,7 @@ fi
 export PATH="/snap/bin:$PATH"
 
 # asdf-vm
-ASDF_SCRIPT=/opt/asdf-vm/asdf.sh
-if [ -f $ASDF_SCRIPT ]; then
-  source $ASDF_SCRIPT
-fi
-
-# ASDF_COMPLETION=$HOME/.asdf/completions/asdf.bash
-# if [ -f $ASDF_COMPLETION ]; then
-#   source $ASDF_COMPLETION
-# fi
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 # use most as pager if present
 # if [ -x /usr/bin/most ]; then
@@ -164,4 +156,7 @@ fi
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
+
+## the fuck
+eval "$(thefuck --alias)"
 
