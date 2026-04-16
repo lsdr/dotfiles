@@ -16,3 +16,6 @@ docker-compose.lsdr.yml
 .vscode
 .mypy_cache
 *.code-workspace
+workbench/*
+.opencode/*
+.ipynb_checkpoints/*
